@@ -334,7 +334,7 @@ const createMessageHandler = () => {
             case MessageType.LOAD_CUSTOM_FILTER_INFO:
                 try {
                     const { url, title } = data;
-                    return await application.loadCustomFilterInfo(url, { title });
+                    return application.loadCustomFilterInfo(url, { title });
                 } catch (e) {
                     return {};
                 }

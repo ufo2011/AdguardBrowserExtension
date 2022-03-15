@@ -1,7 +1,11 @@
 import browser from 'webextension-polyfill';
+
 import { messageHandler } from '../message-handler';
-import { MessageType } from '../../common/messages';
+import { MessageType, OpenAbuseTabMessage, OpenSiteReportTabMessage } from '../../common/messages';
+import { userAgentParser } from '../../common/userAgentParser';
 import { TabsApi } from '../extension-api/tabs';
+import { tsWebExtension } from '../tswebextension';
+import { UrlUtils } from '../utils/url';
 
 export class UiService {
     static baseUrl = browser.runtime.getURL('/');
@@ -40,20 +44,70 @@ export class UiService {
         }
     }
 
-    // TODO: implement
-    static async openAbuseTab(): Promise<void> {
-        // eslint-disable-next-line max-len
-        await browser.tabs.create({ url: 'https://reports.adguard.com/ru/new_issue.html?product_type=Ext&product_version=4.0.126&browser=Chrome&url=https%3A%2F%2Fexample.org&filters=10.1.2.3&stealth.enabled=false&browsing_security.enabled=false' });
+    static async openAbuseTab({ data }: OpenAbuseTabMessage): Promise<void> {
+        const { url } = data;
+
+        let browserName = userAgentParser.getBrowserName();
+        let browserDetails: string | undefined;
+
+        // TODO: list of supported browsers (move to common?)
+        // https://github.com/lancedikson/bowser#filtering-browsers
+        const isSupportedBrowser = userAgentParser.satisfies({
+            chrome: '>=79',
+            firefox: '>=78',
+            opera: '>=66',
+        });
+
+        if (!isSupportedBrowser) {
+            browserDetails = browserName;
+            browserName = 'Other';
+        }
+
+        const filterIds = tsWebExtension.configuration.filters.map(filter => filter.filterId);
+
+        await browser.tabs.create({
+            url: `https://reports.adguard.com/new_issue.html?product_type=Ext&product_version=${
+                encodeURIComponent(browser.runtime.getManifest().version)
+            }&browser=${encodeURIComponent(browserName)
+            }${browserDetails ? `&browser_detail=${encodeURIComponent(browserDetails)}` : ''
+            }&url=${encodeURIComponent(url)
+            }${filterIds.length > 0 ? `&filters=${encodeURIComponent(filterIds.join('.'))}` : ''
+            }${UiService.getStealthString(filterIds)
+            }${UiService.getBrowserSecurityString()}`,
+        });
     }
 
-    // TODO: implement
-    static async openSiteReportTab(): Promise<void> {
-        await browser.tabs.create({ url: 'https://reports.adguard.com/ru/example.org/report.html' });
+    // TODO: implement when settings service will be created (move to steath service?)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    static getStealthString(filterId: number[]): string {
+        return '';
     }
 
-    // TODO: implement
-    static openAssistant(): Promise<void> {
-        return Promise.resolve();
+    // TODO: implement when settings service will be created
+    static getBrowserSecurityString(): string {
+        return '';
+    }
+
+    static async openSiteReportTab({ data }: OpenSiteReportTabMessage): Promise<void> {
+        const { url } = data;
+
+        const domain = UrlUtils.getDomainName(url);
+
+        if (!domain) {
+            return;
+        }
+
+        const punycodeDomain = UrlUtils.toPunyCode(domain);
+
+        await browser.tabs.create({
+            // eslint-disable-next-line max-len
+            url: `https://adguard.com/site.html?domain=${encodeURIComponent(punycodeDomain)}&utm_source=extension&aid=16593`,
+        });
+    }
+
+    static async openAssistant(): Promise<void> {
+        const activeTab = await TabsApi.findOne({ active: true });
+        tsWebExtension.openAssistant(activeTab.id);
     }
 
     // helpers

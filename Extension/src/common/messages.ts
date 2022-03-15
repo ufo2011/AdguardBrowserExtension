@@ -2,6 +2,13 @@
  * Message types used for message passing between background page and
  * other pages (popup, filtering log, content scripts)
  */
+
+export const APP_MESSAGE_HANDLER_NAME = 'app';
+
+export type MessageCommonProps = {
+  handlerName: typeof APP_MESSAGE_HANDLER_NAME;
+};
+
 export enum MessageType {
   CREATE_EVENT_LISTENER = 'createEventListener',
   REMOVE_LISTENER = 'removeListener',
@@ -112,10 +119,10 @@ export type OpenSiteReportTabMessage = {
 };
 
 export type GetOptionsDataMessage = {
-    type: MessageType.GET_OPTIONS_DATA;
+  type: MessageType.GET_OPTIONS_DATA;
 };
 
-export type Message =
+export type Message = (
   | GetTabInfoForPopupMessage
   | ChangeApplicationFilteringDisabledMessage
   | OpenSettingsTabMessage
@@ -123,6 +130,8 @@ export type Message =
   | OpenFilteringLogMessage
   | OpenAbuseTabMessage
   | OpenSiteReportTabMessage
-  | GetOptionsDataMessage;
+  | GetOptionsDataMessage
+) &
+  MessageCommonProps;
 
 export type ExtractedMessage<P> = Extract<Message, { type: P }>;

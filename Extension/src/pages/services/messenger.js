@@ -2,7 +2,7 @@ import browser from 'webextension-polyfill';
 import { nanoid } from 'nanoid';
 
 import { log } from '../../common/log';
-import { MessageType } from '../../common/constants';
+import { MessageType, APP_MESSAGE_HANDLER_NAME } from '../../common/constants';
 
 class Messenger {
     onMessage = browser.runtime.onMessage;
@@ -15,6 +15,7 @@ class Messenger {
         }
 
         const response = await browser.runtime.sendMessage({
+            handlerName: APP_MESSAGE_HANDLER_NAME,
             type,
             data,
         });
@@ -107,7 +108,6 @@ class Messenger {
 
     async getOptionsData() {
         const res = await this.sendMessage(MessageType.GET_OPTIONS_DATA);
-        console.log(res);
         return res;
     }
 
