@@ -2,6 +2,9 @@
     "options_popup_title_placeholder": {
         "message": "نام فیلتر را وارد کنید"
     },
+    "options_filters_list_search_display_option_all_filters": {
+        "message": "همه‌ی فیلترها"
+    },
     "options_filters_list_search_display_option_enabled": {
         "message": "فعال شده"
     },
@@ -14,11 +17,29 @@
     "options_antibanner_custom_filter_already_exists": {
         "message": "این فیلتر دستی از قبل اضافه شده است"
     },
-    "popup_header_cta_link": {
-        "message": "بیشتر بلاک می‌کنید؟"
+    "options_filters_annoyances_consent_title": {
+        "message": "لطفاً قبل از فعال کردن فیلترهای اذیت‌کننده دقت کنید"
+    },
+    "options_filters_annoyances_consent_description": {
+        "message": "شما در حال فعال کردن یک یا چند فیلتر ازار دهنده هستید. انها عناصری را مسدود می کنند که یا به محتوای وب سایت مربوط نیستند یا مرتبط هستند اما به تجربه کاربر شما ازار دهنده هستند. صاحبان وب سایت ممکن است این عناصر را اجباری در نظر بگیرند: اگر انها را مسدود کنید، ممکن است شرایط انها را نقض کنید. برخی از قابلیت های وب سایت ها ممکن است در دسترس نباشد یا ممکن است به درستی کار نکند. شما درک می کنید و موافقت می کنید که شما تنها مسئول پیروی از شرایط استفاده از وب سایت هایی هستید که بازدید می کنید و AdGuard مسئول انطباق شما با شرایط استفاده از وب سایت هایی که بازدید می کنید نیست."
+    },
+    "options_filters_annoyances_consent_question": {
+        "message": "فعال کردن این فیلترها؟"
+    },
+    "options_filters_annoyances_consent_filter_policy": {
+        "message": "برای جزئیات بیشتر در مورد انچه فیلترهای ناراحتی AdGuard مسدود می کنند، ببینید <a>سیاست فیلتر<\/a>"
+    },
+    "options_filters_annoyances_consent_enable_button": {
+        "message": "فعالسازي"
+    },
+    "popup_header_update_filters": {
+        "message": "بررسی بروز رسانی برای فیلتر"
     },
     "options_popup_import_settings_wrong_file_ext": {
         "message": "پسوند فایل باید %extension% باشد"
+    },
+    "popup_resume_protection_button": {
+        "message": "تعمیر کن"
     },
     "popup_adguard_for_ios": {
         "message": "AdGuard for iOS"
@@ -29,14 +50,14 @@
     "options_filters_filter_version": {
         "message": "نسخه:"
     },
+    "options_filters_filter_link": {
+        "message": "رفتن به صفحه اصلی"
+    },
     "options_filters_filter_updated": {
         "message": "بروز رسانی شده در:"
     },
     "options_popup_version_update_disable_notification": {
         "message": "غيرفعالسازي اطلاع رسانی ها"
-    },
-    "popup_adguard_footer_title": {
-        "message": "دریافت AdGuard برای موبایل"
     },
     "options_popup_call_to_action": {
         "message": "آدرس یا مسیر فایل فیلتر معتبر در کادر بالا وارد کنید."
@@ -58,6 +79,24 @@
     },
     "options_popup_check_false_title": {
         "message": "خطا"
+    },
+    "options_popup_check_false_description": {
+        "message": "خطا حین افزودن فیلتر دستی شما"
+    },
+    "options_add_custom_filter_modal_title": {
+        "message": "افزودن فیلتر دستی"
+    },
+    "options_add_custom_filter_modal_error_subtitle": {
+        "message": "لطفاً دوباره امتحان کنید یا با پشتیبانی تماس بگیرید"
+    },
+    "options_add_custom_filter_modal_add_button": {
+        "message": "افزودن"
+    },
+    "options_add_custom_filter_modal_filter_trusted": {
+        "message": "قابل اعتماد"
+    },
+    "options_add_custom_filter_modal_filter_trusted_description": {
+        "message": "فیلترهای مورد اعتماد می‌توانند از اصلاح‌کننده‌های قوی قوانین استفاده کنند - مطمئن شوید که از فیلتر توسعه‌دهندگان مورد اعتماد استفاده می‌کنید"
     },
     "options_popup_try_again_button": {
         "message": "امتحان دوباره"
@@ -87,7 +126,8 @@
         "message": "مسدودساز تبلیغ AdGuard"
     },
     "description": {
-        "message": "افزونه مسدودساز تبلیغ بی نظیر در برابر تبلیغات و پاپ آپ ها.مسدودسازی تبلیغات در فیسبوک،یوتوب و سایر وبسایت ها."
+        "message": "افزونه مسدودساز تبلیغ بی‌همتا در برابر تبلیغات و پنجره‌های بازشو. تبلیغات را در فیسبوک،یوتیوب و سایر تارنماها مسدود می‌کند.",
+        "description": "TEXT MAX LENGTH: 132"
     },
     "background_tab_title": {
         "message": "تب پس زمینه"
@@ -95,23 +135,20 @@
     "options_allowlist": {
         "message": "لیست سفید"
     },
-    "options_allowlist_desc": {
-        "message": "AdGuard وبسایت های لیست سفید را فیلتر نمی کند."
-    },
     "options_allowlist_invert": {
         "message": "معکوس کردن لیست سفید"
+    },
+    "options_allowlist_alert_invert": {
+        "message": "حالت معکوس برای لیست مجازها فعال است. تبلیغات فقط برای سایت‌هایی که به لیست افزوده شده‌اند فیلتر می‌شوند. <a>غیرفعال<\/a>"
     },
     "options_userfilter": {
         "message": "فیلتر کاربر"
     },
     "filtering_log_modified_rules": {
-        "message": "دستورات ویرایش شده:"
-    },
-    "filtering_log_privacy_applied_rules": {
-        "message": "دستورات حریم خصوصی اِعمال شده است"
+        "message": "قوانین اصلاح شده: %rules_count%"
     },
     "filtering_log_in_allowlist": {
-        "message": "این سایت در لیست سفید است"
+        "message": "این تارنما مجاز است"
     },
     "filtering_log_hide_referrer": {
         "message": "ارجاع دهنده از ثالث ها پنهان است"
@@ -147,7 +184,7 @@
         "message": "غیرفعال شده است"
     },
     "options_filters": {
-        "message": "فيلترها"
+        "message": "پالایه‌ها"
     },
     "options_antibanner_rules_count": {
         "message": "تعداد فیلترها: %rules_count%"
@@ -167,8 +204,17 @@
     "options_filters_no_enabled": {
         "message": "فیلتری فعال نشده است"
     },
+    "options_filters_filter_trusted_tag_desc": {
+        "message": "شما اعتماد به این فیلتر را انتخاب کردید."
+    },
     "options_add_custom_filter": {
         "message": "افزودن فیلتر دستی"
+    },
+    "options_empty_custom_filter": {
+        "message": "شما هنوز هیچ فیلتر سفارشی ندارید"
+    },
+    "options_loader_applying_changes": {
+        "message": "اِعمال تغییرات..."
     },
     "options_editor_indicator_saving": {
         "message": "ذخیره سازی..."
@@ -176,11 +222,14 @@
     "options_editor_indicator_saved": {
         "message": "ذخیره شده"
     },
-    "options_popup_import_success_title": {
-        "message": "تنظیمات با موفقیت وارد شد"
+    "options_popup_import_error_required_privacy_permission": {
+        "message": "برای درون‌برد این فایل تنظیمات، به AdGuard اجازه دهید تنظیمات مربوط به حریم خصوصی شما را تغییر دهد."
     },
     "options_popup_import_error_title": {
-        "message": "خطا در وارد کردن تنظیمات"
+        "message": "تنظیمات وارد نشد"
+    },
+    "options_popup_import_error_file_description": {
+        "message": "مشکلی پیش آمده"
     },
     "options_popup_trusted_filter_title": {
         "message": "قابل اعتماد"
@@ -188,11 +237,11 @@
     "options_popup_trusted_filter_description": {
         "message": "فیلترهای مورد اعتماد میتوانند از ویرایشگرهای دستور قدرتمند استفاده کنند که استفاده نادرست از آن میتواند خطرناک باشد.این کادر را انتخاب نکنید مگر اینکه کاملا به آن اعتماد دارید."
     },
-    "popup_site_filtering_state": {
-        "message": "حفاظت در این وبسایت"
-    },
     "popup_site_filtering_state_secure_page": {
         "message": "صفحه امن"
+    },
+    "popup_site_filtering_state_loading": {
+        "message": "بارگیری..."
     },
     "popup_site_filtering_state_enabled": {
         "message": "حفاظت فعال شده است"
@@ -203,17 +252,35 @@
     "popup_site_filtering_state_paused": {
         "message": "حفاظت متوقف شده است"
     },
+    "popup_site_filtering_state_subtitle_all_websites": {
+        "message": "برای همه تارنماها"
+    },
     "popup_site_exception_information": {
-        "message": "فیلترینگ غیرفعال شده است،چون در عملکرد این سایت تاثیر می گذارد."
+        "message": "پالایش غیرفعال شده است،چون در عملکرد این تارنما تاثیر می‌گذارد."
     },
     "popup_tab_blocked_count": {
         "message": "مسدود شده: %num%"
     },
-    "popup_tab_blocked_all_count": {
-        "message": "مجموع: %num%"
-    },
     "popup_statistics_total": {
         "message": "مجموع"
+    },
+    "popup_statistics_all_categories": {
+        "message": "همه"
+    },
+    "popup_statistics_category_advertising": {
+        "message": "تبلیغات"
+    },
+    "popup_statistics_category_trackers": {
+        "message": "رَدیاب"
+    },
+    "popup_statistics_category_social_media": {
+        "message": "رسانه اجتماعی"
+    },
+    "popup_statistics_category_cdn": {
+        "message": "CDN"
+    },
+    "popup_statistics_category_other": {
+        "message": "ساير"
     },
     "popup_statistics_week_days_mon": {
         "message": "دوشنبه"
@@ -305,44 +372,14 @@
     "options_popup_version_update_offer_button_text": {
         "message": "بیشتر بدانید"
     },
-    "popup_block_site_ads_option": {
-        "message": "مسدود کردن تبلیغات در این وبسایت"
-    },
     "popup_security_report": {
         "message": "گزارش امنیتی وبسایت"
     },
-    "popup_open_settings": {
-        "message": "تنظیمات AdGuard"
-    },
-    "popup_block_site_ads_android": {
-        "message": "مسدودسازی تبلیغات در وبسایت"
-    },
-    "popup_security_report_android": {
-        "message": "گزارش امنیتی"
-    },
-    "popup_in_allowlist_android": {
-        "message": "در لیست سفید"
-    },
-    "popup_site_protection_disabled_android": {
-        "message": "حفاظت متوقف شده"
-    },
-    "popup_open_log_android": {
-        "message": "وقایع فیلترینگ"
-    },
-    "context_block_site_ads": {
-        "message": "مسدودسازی تبلیغات در این وبسایت..."
-    },
-    "context_block_site_element": {
-        "message": "مسدودسازی عنصر..."
-    },
     "context_security_report": {
-        "message": "بازکردن گزارش امنیتی وبسایت..."
+        "message": "گزارش امنیتی وبسایت"
     },
     "context_complaint_website": {
-        "message": "گزارش یک مشکل..."
-    },
-    "context_site_filtering_disabled": {
-        "message": "AdGuard نمیتواند در این دامنه اِجرا شود"
+        "message": "گزارش یک مشکل"
     },
     "context_disable_protection": {
         "message": "وقفه حفاظت AdGuard"
@@ -354,10 +391,10 @@
         "message": "حفاظت AdGuard متوقف شده است"
     },
     "context_open_settings": {
-        "message": "تنظیمات AdGuard..."
+        "message": "تنظیمات AdGuard"
     },
     "context_open_log": {
-        "message": "وقایع فیلترینگ..."
+        "message": "بازکردن وقایع فیلترینگ"
     },
     "context_site_exception": {
         "message": "این وبسایت در استثناءها هست"
@@ -374,6 +411,15 @@
     "alert_popup_filter_enabled_title": {
         "message": "فعالسازی خودکار فیلترها"
     },
+    "alert_popup_filter_enabled_desc": {
+        "message": "%filter_name% به طور خودکار فعال شده است"
+    },
+    "filters_download_title": {
+        "message": "پایگاه اطلاعات فیلترها در حال بارگیری است..."
+    },
+    "filters_download_loading": {
+        "message": "لطفا حین بارگیری پایگاه اطلاعات فیلترها منتظر بمانید..."
+    },
     "filtering_modal_element": {
         "message": "عنصر:"
     },
@@ -386,8 +432,14 @@
     "filtering_log_title": {
         "message": "وقایع فیلترینگ"
     },
+    "filtering_log_search_string": {
+        "message": "متن جستجو را وارد کنید"
+    },
+    "filtering_log_search_tabs_placeholder": {
+        "message": "جستجو در زبانه ها"
+    },
     "filtering_refresh_tab_short": {
-        "message": "تازه سازی"
+        "message": "نوسازی"
     },
     "filtering_clear_log_events": {
         "message": "پاکسازی گزارشات"
@@ -417,7 +469,7 @@
         "message": "جزئیات درخواست"
     },
     "filtering_modal_preview_title": {
-        "message": "پیشنمایش"
+        "message": "پیش‌نمایش"
     },
     "filtering_modal_type": {
         "message": "نوع:"
@@ -428,8 +480,8 @@
     "filtering_modal_rule": {
         "message": "دستور:"
     },
-    "filtering_modal_privacy": {
-        "message": "حریم خصوصی:"
+    "filtering_modal_rules": {
+        "message": "دستورات:"
     },
     "filtering_modal_filter": {
         "message": "فیلتر:"
@@ -437,11 +489,17 @@
     "filtering_modal_block": {
         "message": "مسدود کن"
     },
+    "filtering_modal_block_again": {
+        "message": "مسدودسازی مجدد"
+    },
     "filtering_modal_unblock": {
         "message": "باز کن"
     },
+    "filtering_modal_remove_user": {
+        "message": "حذف قانون"
+    },
     "filtering_modal_preview_request_button": {
-        "message": "پیشنمایش"
+        "message": "پیش‌نمایش"
     },
     "filtering_modal_remove_allowlist": {
         "message": "حذف از لیست سفید"
@@ -449,8 +507,14 @@
     "filtering_modal_add_title": {
         "message": "افزودن یک دستور"
     },
+    "filtering_modal_status_text_desc": {
+        "message": "وضعیت:"
+    },
     "filtering_modal_status_text_loading": {
-        "message": "بارگیری..."
+        "message": "در حال بارگذاری..."
+    },
+    "filtering_modal_filtering_status_text_desc": {
+        "message": "وضعیت فیلترسازی:"
     },
     "filtering_modal_rule_text_desc": {
         "message": "متن دستور:"
@@ -462,10 +526,13 @@
         "message": "گزينه ها:"
     },
     "filtering_modal_apply_domains": {
-        "message": "اِعمال دستور در همه وبسایت ها"
+        "message": "اعمال رویه در همه تارنماها"
     },
     "filtering_modal_third_party": {
         "message": "فقط اِعمال به درخواست های ثالث"
+    },
+    "filtering_modal_remove_param": {
+        "message": "حذف پارامترهای جستار"
     },
     "filtering_modal_add_rule": {
         "message": "افزودن یک دستور"
@@ -476,11 +543,38 @@
     "filtering_modal_open_in_new_tab": {
         "message": "بازکردن در تب جدید"
     },
+    "filtering_modal_show_full_url": {
+        "message": "نمایش URL کامل"
+    },
+    "filtering_modal_hide_full_url": {
+        "message": "پنهان‌سازی تارنشانی کامل"
+    },
+    "filtering_modal_show_full_rule": {
+        "message": "نمایش دستور کامل"
+    },
+    "filtering_modal_hide_full_rule": {
+        "message": "پنهان کردن دستور کامل"
+    },
+    "filtering_modal_show_full_element": {
+        "message": "نمایش تمام عناصر"
+    },
+    "filtering_modal_hide_full_element": {
+        "message": "پنهان کردن تمام عناصر"
+    },
+    "filtering_modal_copy_to_clipboard": {
+        "message": "کپی به کلیپ‌بورد"
+    },
+    "filtering_modal_copied": {
+        "message": "کپی شد"
+    },
+    "filtering_modal_converted_to": {
+        "message": "تبدیل شده به:"
+    },
     "filtering_log_filter_regular": {
         "message": "عادی"
     },
     "filtering_log_filter_allowed": {
-        "message": "لیست سفید"
+        "message": "مجاز"
     },
     "filtering_log_filter_blocked": {
         "message": "مسدود شده"
@@ -489,13 +583,13 @@
         "message": "ویرایش شده"
     },
     "filtering_log_filter_user_rules": {
-        "message": "فیلتر کاربر"
+        "message": "دستورات کاربر"
     },
     "filtering_log_status_processed": {
         "message": "پردازش شده"
     },
     "filtering_log_status_allowed": {
-        "message": "لیست سفید"
+        "message": "مجاز"
     },
     "filtering_log_status_blocked": {
         "message": "مسدود شده"
@@ -509,6 +603,9 @@
     "options_general_settings": {
         "message": "تنظیمات عمومی"
     },
+    "options_block_acceptable_ads": {
+        "message": "مسدودسازی تبلیغات جستجو و تبلیغات شخصی وبسایت ها"
+    },
     "options_show_blocked_ads_count_title": {
         "message": "تعداد تبلیغات مسدود شده را در آیکون افزونه AdGuard نشان می دهد"
     },
@@ -516,10 +613,16 @@
         "message": "فعالسازی خودکار بیشتر فیلترهای مناسب"
     },
     "options_select_theme": {
-        "message": "پوسته"
+        "message": "تم"
     },
     "options_theme_selector_system": {
-        "message": "سیستم"
+        "message": "دستگاه"
+    },
+    "options_theme_selector_light": {
+        "message": "روشن"
+    },
+    "options_theme_selector_dark": {
+        "message": "تاریک"
     },
     "options_export_settings": {
         "message": "خروجی گیری تنظیمات"
@@ -527,14 +630,26 @@
     "options_import_settings": {
         "message": "واردکردن تنظیمات"
     },
+    "options_report_bug": {
+        "message": "گزارش مشکل"
+    },
+    "options_leave_feedback": {
+        "message": "ثبت بازخورد"
+    },
     "options_privacy": {
-        "message": "حریم خصوصی"
+        "message": "حفاظت ردیابی"
     },
     "options_update_antibanner_filters": {
         "message": "بررسی بروز رسانی برای فیلتر"
     },
     "options_check_update": {
-        "message": "بررسي براي بروز رساني"
+        "message": "بررسی بروز رسانی"
+    },
+    "options_check_update_progress": {
+        "message": "در حال بررسی..."
+    },
+    "options_set_update_interval": {
+        "message": "فاصله بروز رسانی فیلترها"
     },
     "options_userfilter_export": {
         "message": "خروجيگيري"
@@ -548,14 +663,20 @@
     "options_userfilter_description_key": {
         "message": "می توانید فیلترهای خودتان را در اینجا اضافه کنید. این گزینه برای کاربرانی که با HTML\/CSS آشنا هستند توصیه می شود. <a>آموزش فیلترهای دستی<\/a> را برای اضافه کردن فیلترهای خود مطالعه کنید."
     },
+    "options_userfilter_subtitle_key": {
+        "message": "مسدود کردن تبلیغات را با قوانین فیلترینگ خودتان تنظیم کنید"
+    },
     "options_open_changelog": {
         "message": "وقایع تغییرات"
     },
     "options_safebrowsing_enabled": {
         "message": "حفاظت از فیشینگ و بد افزار"
     },
+    "options_safebrowsing_enabled_desc": {
+        "message": "فیلترهای ویژه ای که از شما در برابر <a>وب سایت های مخرب و فیشینگ<\/a> محافظت می کند."
+    },
     "options_site": {
-        "message": "وبسایت رسمی"
+        "message": "تارنماهای رسمی"
     },
     "options_discuss": {
         "message": "گفتگو درباره AdGuard"
@@ -566,11 +687,44 @@
     "options_footer_like_us_cta": {
         "message": "امتیاز بدهید!"
     },
+    "options_miscellaneous_settings": {
+        "message": "متفرقه"
+    },
+    "options_rule_syntax": {
+        "message": "نحو قوانین"
+    },
+    "options_rule_limits": {
+        "message": "محدودیت‌های رویه"
+    },
+    "options_rule_limits_dynamic": {
+        "message": "قوانین پویا"
+    },
+    "options_rule_limits_static_rules": {
+        "message": "قوانین ثابت"
+    },
+    "options_rule_limits_warning_title": {
+        "message": "مرورگر فهرست فیلتر های فعال را اصلاح کرده است"
+    },
+    "options_rule_limits_warning_explanation_title": {
+        "message": "چه اتفاقی افتاد؟"
+    },
+    "options_rule_limits_warning_list_enabled_before_title": {
+        "message": "پالایه‌ها قبل از به‌روزرسانی فعال شدند"
+    },
+    "options_rule_limits_warning_list_enabled_now_title": {
+        "message": "پالایه‌ها اکنون فعال شدند"
+    },
+    "options_rule_limits_warning_actions_title": {
+        "message": "اقدامات احتمالی شما"
+    },
     "options_show_adguard_full_version_title": {
         "message": "نمایش اطلاعات در نسخه کامل AdGuard"
     },
     "options_show_app_updated_notification": {
         "message": "درباره بروز رسانی افزونه اطلاع رسانی کن"
+    },
+    "options_open_log": {
+        "message": "بازکردن وقایع فیلترینگ"
     },
     "options_reset_stats": {
         "message": "بازنشانی آمار"
@@ -581,6 +735,15 @@
     "options_reset_settings": {
         "message": "ریست تنظیمات"
     },
+    "options_reset_settings_done": {
+        "message": "تنظیمات بازنشانی شده است"
+    },
+    "options_reset_settings_error": {
+        "message": "خطا هنگام بازنشانی تنظیمات"
+    },
+    "options_collect_hit_stats_title": {
+        "message": "مشارکت در توسعه فیلترهای AdGuard"
+    },
     "options_show_context_menu_title": {
         "message": "افزودن AdGuard به منوی زمینۀ مرورگر"
     },
@@ -588,16 +751,19 @@
         "message": "از فیلترهای بهینه شده استفاده کن"
     },
     "options_use_optimized_filters_desc": {
-        "message": "لیست فیلترهای بهینه شده برای تلفن های همراه"
+        "message": "برای صرفه جویی در ترافیک، از نسخه های کوتاه تر فیلترها فقط با محبوب ترین قوانین استفاده می کند. برای مرورگرهای موبایل مناسب تر است"
     },
     "options_privacy_title": {
-        "message": "حریم خصوصی"
+        "message": "حفاظت ردیابی"
     },
-    "options_privacy_desc": {
-        "message": "حفاظت از هویت و اطلاعات شخصی شما از هزاران ردیاب،با محبوب ترین روش های مسدود سازی."
+    "options_hide_referrer_title": {
+        "message": " مخفی کردن ارجاع دهنده شما از ثالث ها"
     },
     "options_hide_search_queries_title": {
-        "message": "مخفی کردن جستار جستجوی شما"
+        "message": "پنهان‌سازی جستارهای جستجوی شما"
+    },
+    "options_send_not_track_title": {
+        "message": "درخواست از تارنماها که شما را ردیابی نکنند"
     },
     "options_stripped_tracking_parameters": {
         "message": "پارامترهای ردیابی حذف شده"
@@ -611,8 +777,14 @@
     "options_remove_client_data_title": {
         "message": "حذف سرساز X-Client-Data"
     },
+    "options_disable_webrtc_title": {
+        "message": "مسدودسازی WebRTC"
+    },
     "options_strip_tracking_params_title": {
         "message": "حذف پارامترهای ردیابی"
+    },
+    "options_block_known_trackers_title": {
+        "message": "مسدودسازی ردیاب های شناخته شده"
     },
     "options_third_party_title": {
         "message": "خود-تخریبی کوکی های شخص ثالث"
@@ -648,7 +820,7 @@
         "message": "تعویض حفاظت"
     },
     "short_name": {
-        "message": "مسدودساز تبلیغ AdGuard"
+        "message": "AdGuard"
     },
     "options_about": {
         "message": "درباره"
@@ -668,23 +840,47 @@
     "options_copyright": {
         "message": "همه حقوق محفوظ است."
     },
+    "options_remove_filter_confirm_modal_title": {
+        "message": "این فیلتر حذف شود؟"
+    },
     "options_remove_filter_confirm_modal_ok_button": {
         "message": "حذف"
     },
-    "options_nav_compare": {
-        "message": "چطور مقایسه می شوند"
+    "options_nav_better_than_extension": {
+        "message": "چرا برنامه تمام عیار AdGuard بهتر از افزونه است؟"
     },
-    "options_nav_hide": {
-        "message": "پنهان کن"
+    "options_nav_compare": {
+        "message": "مقایسه"
     },
     "options_filters_search": {
         "message": "جستجو"
     },
+    "options_about_title": {
+        "message": "افزونه مرورگر AdGuard"
+    },
+    "group_description_custom": {
+        "message": "فیلترهای خود را ایجاد کنید تا فیلتر وب را به دلخواه خود تنظیم کنید."
+    },
     "fullscreen_user_rules_title": {
         "message": "فیلتر کاربر"
     },
+    "options_user_rules_editor_stub_go_to_editor_button": {
+        "message": "به ویرایشگر بروید"
+    },
+    "options_editor_open_fullscreen_button_tooltip": {
+        "message": "ویرایشگر را در تب جدید باز کنید"
+    },
+    "options_editor_close_fullscreen_button_tooltip": {
+        "message": "حالت تمام صفحه ویرایشگر را ببندید"
+    },
+    "options_clear_stats_confirm_modal_title": {
+        "message": "آمار پاک شود؟"
+    },
     "options_clear_stats_confirm_modal_clear_button": {
         "message": "پاکسازی"
+    },
+    "options_reset_settings_confirm_modal_title": {
+        "message": "تنظیمات بازنشانی شود؟"
     },
     "options_reset_settings_confirm_modal_clear_button": {
         "message": "ريست"
@@ -692,17 +888,56 @@
     "options_confirm_modal_cancel_button": {
         "message": "لغو"
     },
+    "filtering_log_details_modal_beautify_button": {
+        "message": "زیبا کردن"
+    },
+    "filtering_log_details_modal_back_button": {
+        "message": "بازگشت به درخواست"
+    },
     "filtering_log_details_modal_try_again": {
         "message": "امتحان دوباره"
+    },
+    "filtering_log_tag_tooltip_html": {
+        "message": "اسناد و مدارک فرعی"
+    },
+    "filtering_log_tag_tooltip_css": {
+        "message": "شیوه نامه ها"
+    },
+    "filtering_log_tag_tooltip_js": {
+        "message": "اسکریپت ها"
+    },
+    "filtering_log_tag_tooltip_xhr": {
+        "message": "XMLHttpRequests و درخواست های واکشی"
+    },
+    "filtering_log_tag_tooltip_img": {
+        "message": "تصاویر"
     },
     "filtering_log_tag_tooltip_media": {
         "message": "رسانه"
     },
+    "filtering_log_badge_tooltip_third_party": {
+        "message": "درخواست شخص ثالث"
+    },
+    "filtering_log_badge_tooltip_http_req_method": {
+        "message": "روش درخواست HTTP"
+    },
+    "filtering_log_badge_tooltip_http_status_code": {
+        "message": "کد وضعیت HTTP"
+    },
     "options_stealth_general_title": {
-        "message": "General"
+        "message": "عمومی"
+    },
+    "options_stealth_cookies_title": {
+        "message": "کوکی ها"
     },
     "options_stealth_miscellaneous_title": {
         "message": "متفرقه"
+    },
+    "blocking_pages_malware": {
+        "message": "این صفحه وب در <strong>%host%<\/strong>تحت عنوان صفحه بدافزار گزارش و بر اساس ترجیحات امنیتی شما مسدود شده است."
+    },
+    "blocking_pages_phishing": {
+        "message": "این صفحه وب در <strong>%host%<\/strong>تحت عنوان صفحه فیشینگ گزارش و بر اساس ترجیحات امنیتی شما مسدود شده است."
     },
     "blocking_pages_advanced_button": {
         "message": "پیشرفته"
@@ -720,12 +955,21 @@
         "message": "با AdGuard مسدود شده است"
     },
     "blocking_pages_rule_content_title": {
-        "message": "AdGuard از دسترسی به این صفحه به علت دستور فیلتر زیر جلوگیری کرد"
+        "message": "AdGuard از بارگیری این صفحه به علت دستور فیلتر زیر جلوگیری کرده است"
     },
     "blocking_pages_btn_go_back": {
         "message": "برگرد"
     },
     "blocking_pages_btn_proceed": {
-        "message": "بهر حال ادامه بده"
+        "message": "در هر صورت ادامه بده"
+    },
+    "text_collapser_show_default": {
+        "message": "نمایش کامل متن"
+    },
+    "text_collapser_hide_default": {
+        "message": "پنهان کردن تمام متن"
+    },
+    "close_button_title": {
+        "message": "بستن"
     }
 }

@@ -1,4 +1,23 @@
+/**
+ * @file
+ * This file is part of AdGuard Browser Extension (https://github.com/AdguardTeam/AdguardBrowserExtension).
+ *
+ * AdGuard Browser Extension is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * AdGuard Browser Extension is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with AdGuard Browser Extension. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 import { createContext } from 'react';
+
 import {
     action,
     computed,
@@ -8,14 +27,11 @@ import {
 } from 'mobx';
 
 import { messenger } from '../../../services/messenger';
-import { createSavingService, EVENTS as SAVING_FSM_EVENTS, STATES } from '../Editor/savingFSM';
-
-const savingService = createSavingService({
-    id: 'userRules',
-    services: {
-        saveData: (_, e) => messenger.saveUserRules(e.value),
-    },
-});
+import {
+    createSavingService,
+    SavingFSMEvent,
+    SavingFSMState,
+} from '../Editor/savingFSM';
 
 class UserRulesEditorStore {
     @observable settings = null;
@@ -24,19 +40,36 @@ class UserRulesEditorStore {
 
     @observable userRulesEditorWrap = null;
 
-    @observable savingUserRulesState = savingService.initialState.value;
-
     @observable userRulesExportAvailable = false;
 
     @observable userRulesEditorPrefsDropped = false;
 
+    @observable specificLimitWarningData = null;
+
+    savingService = createSavingService({
+        id: 'userRules',
+        services: {
+            saveData: async ({ event }) => {
+                const { value, callback } = event;
+
+                await messenger.saveUserRules(value);
+
+                await callback();
+            },
+        },
+    });
+
+    @observable savingUserRulesState = this.savingService.getSnapshot().value;
+
     constructor() {
         makeObservable(this);
 
-        savingService.onTransition((state) => {
+        this.updateSetting = this.updateSetting.bind(this);
+
+        this.savingService.subscribe((state) => {
             runInAction(() => {
                 this.savingUserRulesState = state.value;
-                if (state.value === STATES.SAVING) {
+                if (state.value === SavingFSMState.Saving) {
                     this.userRulesEditorContentChanged = false;
                 }
             });
@@ -53,27 +86,27 @@ class UserRulesEditorStore {
     }
 
     @action
-    setUserRulesEditorContentChangedState = (state) => {
-        this.userRulesEditorContentChanged = state;
-    };
+        setUserRulesEditorContentChangedState = (state) => {
+            this.userRulesEditorContentChanged = state;
+        };
 
     @action
-    setUserRulesExportAvailableState = (state) => {
-        this.userRulesExportAvailable = state;
-    };
+        setUserRulesExportAvailableState = (state) => {
+            this.userRulesExportAvailable = state;
+        };
 
     @action
-    setUserRulesEditorPrefsDropped = (state) => {
-        this.userRulesEditorPrefsDropped = state;
-    };
+        setUserRulesEditorPrefsDropped = (state) => {
+            this.userRulesEditorPrefsDropped = state;
+        };
 
     @action
-    updateSetting(settingId, value) {
+    async updateSetting(settingId, value) {
         if (this.settings) {
             this.settings.values[settingId] = value;
         }
 
-        messenger.changeUserSetting(settingId, value);
+        await messenger.changeUserSetting(settingId, value);
     }
 
     @action
@@ -81,7 +114,8 @@ class UserRulesEditorStore {
         this.userRulesEditorWrap = !this.userRulesEditorWrap;
         if (this.settings) {
             await this.updateSetting(
-                this.settings.names.USER_RULES_EDITOR_WRAP, this.userRulesEditorWrap,
+                this.settings.names.UserRulesEditorWrap,
+                this.userRulesEditorWrap,
             );
         }
     }
@@ -95,16 +129,38 @@ class UserRulesEditorStore {
     get userRulesEditorWrapState() {
         if (this.settings) {
             this.setUserRulesEditorWrapMode(
-                this.settings.values[this.settings.names.USER_RULES_EDITOR_WRAP],
+                this.settings.values[this.settings.names.UserRulesEditorWrap],
             );
         }
 
         return this.userRulesEditorWrap;
     }
 
-    // eslint-disable-next-line class-methods-use-this
-    async saveUserRules(value) {
-        savingService.send(SAVING_FSM_EVENTS.SAVE, { value });
+    @computed
+    get userFilterEnabledSettingId() {
+        return this.settings.names.UserFilterEnabled;
+    }
+
+    @computed
+    get userFilterEnabled() {
+        if (this.settings) {
+            return this.settings.values[this.userFilterEnabledSettingId];
+        }
+        return false;
+    }
+
+    saveUserRules(value) {
+        return new Promise((resolve, reject) => {
+            try {
+                this.savingService.send({
+                    type: SavingFSMEvent.Save,
+                    value,
+                    callback: resolve,
+                });
+            } catch (e) {
+                reject(e);
+            }
+        });
     }
 }
 

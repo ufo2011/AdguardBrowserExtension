@@ -1,0 +1,61 @@
+.annoyances-consent {
+    border: 0;
+    outline: none;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+
+    @media (min-width: 640px) {
+        flex-wrap: nowrap;
+    }
+
+    &__content {
+        padding-right: 24px;
+    }
+
+    &__text {
+        margin-bottom: 16px;
+    }
+
+    &__filter {
+
+        &--header {
+            display: flex;
+            width: 100%;
+        }
+
+        &--name {
+            font-size: 16px;
+            lint-height: 21px;
+            font-weight: 600;
+        }
+
+        &--homepage-link {
+            display: flex;
+            color: var(--stroke-icons-product-icon-default);
+
+            .icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        &--description {
+            font-size: 14px;
+            line-height: 19px;
+            font-weight: 400;
+            color: var(--text-description-description-default);
+        }
+
+        &--policy {
+            margin: 24px 0 16px 0;
+
+            &--link {
+                color: var(--text-links-link-default);
+            }
+        }
+    }
+}

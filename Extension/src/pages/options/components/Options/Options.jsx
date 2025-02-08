@@ -1,8 +1,29 @@
-import React, {
-    useContext,
-    useEffect,
-} from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+/**
+ * @file
+ * This file is part of AdGuard Browser Extension (https://github.com/AdguardTeam/AdguardBrowserExtension).
+ *
+ * AdGuard Browser Extension is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * AdGuard Browser Extension is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with AdGuard Browser Extension. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+import React, { useContext, useEffect } from 'react';
+import {
+    createHashRouter,
+    createRoutesFromElements,
+    Outlet,
+    Route,
+    RouterProvider,
+} from 'react-router-dom';
 import { observer } from 'mobx-react';
 
 import { General } from '../General';
@@ -14,33 +35,71 @@ import { UserRules } from '../UserRules';
 import { Miscellaneous } from '../Miscellaneous';
 import { About } from '../About';
 import { Footer } from '../Footer';
+import { RulesLimits } from '../RulesLimits';
 import { rootStore } from '../../stores/RootStore';
 import { Notifications } from '../Notifications';
+import { updateFilterDescription } from '../../../helpers';
 import { messenger } from '../../../services/messenger';
-import { log } from '../../../../common/log';
-import { Icons } from '../../../common/components/ui/Icons';
-import { NOTIFIER_TYPES } from '../../../../common/constants';
+import { logger } from '../../../../common/logger';
+import { Icons as CommonIcons } from '../../../common/components/ui/Icons';
+import { Loader } from '../../../common/components/Loader';
+import { NotifierType } from '../../../../common/constants';
 import { useAppearanceTheme } from '../../../common/hooks/useAppearanceTheme';
+import { OptionsPageSections } from '../../../../common/nav';
+import { translator } from '../../../../common/translators/translator';
+import { Icons } from '../ui/Icons';
+import { NotificationType } from '../../stores/UiStore';
 
 import '../../styles/styles.pcss';
 
+const createRouter = (children) => {
+    return createHashRouter(
+        createRoutesFromElements(children),
+        // We are opting out these features and hiding the warning messages by setting it to false.
+        // TODO: Remove this when react-router-dom is updated to v7
+        // https://github.com/remix-run/react-router/issues/12250
+        {
+            future: {
+                v7_relativeSplatPath: false,
+                v7_fetcherPersist: false,
+                v7_normalizeFormMethod: false,
+                v7_partialHydration: false,
+                v7_skipActionErrorRevalidation: false,
+            },
+        },
+    );
+};
+
+const OptionsLayout = () => {
+    return (
+        <>
+            <Sidebar />
+            <div className="inner">
+                <div className="content">
+                    <Notifications />
+                    <Outlet />
+                </div>
+                <Footer />
+            </div>
+        </>
+    );
+};
+
 const Options = observer(() => {
-    const { settingsStore } = useContext(rootStore);
+    const { settingsStore, uiStore } = useContext(rootStore);
 
     useAppearanceTheme(settingsStore.appearanceTheme);
 
     useEffect(() => {
         let removeListenerCallback = () => {};
 
-        (async () => {
-            await settingsStore.requestOptionsData(true);
-
+        const subscribeToMessages = async () => {
             const events = [
-                NOTIFIER_TYPES.REQUEST_FILTER_UPDATED,
-                NOTIFIER_TYPES.UPDATE_ALLOWLIST_FILTER_RULES,
-                NOTIFIER_TYPES.FILTERS_UPDATE_CHECK_READY,
-                NOTIFIER_TYPES.SETTING_UPDATED,
-                NOTIFIER_TYPES.FULLSCREEN_USER_RULES_EDITOR_UPDATED,
+                NotifierType.RequestFilterUpdated,
+                NotifierType.UpdateAllowlistFilterRules,
+                NotifierType.FiltersUpdateCheckReady,
+                NotifierType.SettingUpdated,
+                NotifierType.FullscreenUserRulesEditorUpdated,
             ];
 
             removeListenerCallback = await messenger.createEventListener(
@@ -49,69 +108,105 @@ const Options = observer(() => {
                     const { type } = message;
 
                     switch (type) {
-                        case NOTIFIER_TYPES.REQUEST_FILTER_UPDATED: {
+                        case NotifierType.RequestFilterUpdated: {
                             await settingsStore.requestOptionsData();
                             break;
                         }
-                        case NOTIFIER_TYPES.UPDATE_ALLOWLIST_FILTER_RULES: {
+                        case NotifierType.UpdateAllowlistFilterRules: {
                             await settingsStore.getAllowlist();
                             break;
                         }
-                        case NOTIFIER_TYPES.FILTERS_UPDATE_CHECK_READY: {
+                        case NotifierType.FiltersUpdateCheckReady: {
                             const [updatedFilters] = message.data;
                             settingsStore.refreshFilters(updatedFilters);
+                            uiStore.addNotification(updateFilterDescription(updatedFilters));
                             break;
                         }
-                        case NOTIFIER_TYPES.SETTING_UPDATED: {
+                        case NotifierType.SettingUpdated: {
                             await settingsStore.requestOptionsData();
                             break;
                         }
-                        case NOTIFIER_TYPES.FULLSCREEN_USER_RULES_EDITOR_UPDATED: {
+                        case NotifierType.FullscreenUserRulesEditorUpdated: {
                             const [isOpen] = message.data;
-                            await settingsStore.setFullscreenUserRulesEditorState(isOpen);
+                            settingsStore.setFullscreenUserRulesEditorState(isOpen);
                             break;
                         }
                         default: {
-                            log.debug('Undefined message type:', type);
+                            logger.debug('Undefined message type:', type);
                             break;
                         }
                     }
                 },
             );
+        };
+
+        (async () => {
+            const { areFilterLimitsExceeded } = await settingsStore.requestOptionsData(true);
+
+            // Show notification about changed filter list by browser only once.
+            if (__IS_MV3__ && areFilterLimitsExceeded) {
+                uiStore.addNotification({
+                    description: translator.getMessage('popup_limits_exceeded_warning'),
+                    extra: {
+                        link: translator.getMessage('options_rule_limits'),
+                    },
+                    type: NotificationType.ERROR,
+                });
+            }
+
+            // Note: Is it important to check the limits after the request for
+            // options data is completed, because the request for options data
+            // will wait until the background service worker wakes up.
+            if (__IS_MV3__) {
+                await settingsStore.checkLimitations();
+            }
+
+            await subscribeToMessages();
         })();
 
         return () => {
             removeListenerCallback();
         };
-    }, [settingsStore]);
+    }, [settingsStore, uiStore]);
 
     if (!settingsStore.optionsReadyToRender) {
         return null;
     }
 
     return (
-        <HashRouter hashType="noslash">
+        <>
+            <CommonIcons />
             <Icons />
+            <Loader showLoader={uiStore.showLoader} />
             <div className="page">
-                <Sidebar />
-                <div className="inner">
-                    <div className="content">
-                        <Notifications />
-                        <Switch>
-                            <Route path="/" exact component={General} />
-                            <Route path="/filters" component={Filters} />
-                            <Route path="/stealth" component={Stealth} />
-                            <Route path="/allowlist" component={Allowlist} />
-                            <Route path="/user-filter" component={UserRules} />
-                            <Route path="/miscellaneous" component={Miscellaneous} />
-                            <Route path="/about" component={About} />
-                            <Route component={General} />
-                        </Switch>
-                    </div>
-                    <Footer />
-                </div>
+                <RouterProvider
+                    // We are opting out these features and hiding the warning messages by setting it to false.
+                    // TODO: Remove this when react-router-dom is updated to v7
+                    // https://github.com/remix-run/react-router/issues/12250
+                    future={{
+                        v7_relativeSplatPath: false,
+                        v7_startTransition: false,
+                    }}
+                    router={(
+                        createRouter(
+                            <Route path="/" element={<OptionsLayout />}>
+                                <Route index element={<General />} />
+                                <Route path={OptionsPageSections.filters} element={<Filters />} />
+                                <Route path={OptionsPageSections.stealth} element={<Stealth />} />
+                                <Route path={OptionsPageSections.allowlist} element={<Allowlist />} />
+                                <Route path={OptionsPageSections.userFilter} element={<UserRules />} />
+                                <Route path={OptionsPageSections.miscellaneous} element={<Miscellaneous />} />
+                                {__IS_MV3__ && (
+                                    <Route path={OptionsPageSections.ruleLimits} element={<RulesLimits />} />
+                                )}
+                                <Route path={OptionsPageSections.about} element={<About />} />
+                                <Route path="*" element={<General />} />
+                            </Route>,
+                        )
+                    )}
+                />
             </div>
-        </HashRouter>
+        </>
     );
 });
 

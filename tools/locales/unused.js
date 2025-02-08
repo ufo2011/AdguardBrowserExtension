@@ -1,5 +1,24 @@
-import fs from 'fs';
-import path from 'path';
+/**
+ * @file
+ * This file is part of AdGuard Browser Extension (https://github.com/AdguardTeam/AdguardBrowserExtension).
+ *
+ * AdGuard Browser Extension is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * AdGuard Browser Extension is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with AdGuard Browser Extension. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import { cliLog } from '../cli-log';
 import { getLocaleTranslations } from '../helpers';
@@ -12,12 +31,19 @@ import {
     LOCALES_RELATIVE_PATH,
 } from './locales-constants';
 
+/* eslint-disable @typescript-eslint/naming-convention */
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+/* eslint-enable @typescript-eslint/naming-convention */
+
 const LOCALES_DIR = path.resolve(__dirname, LOCALES_RELATIVE_PATH);
 const SRC_DIR = path.resolve(__dirname, SRC_RELATIVE_PATH);
 
 /**
  * Checks file extension is it one of source files
+ *
  * @param {string} filePath path to file
+ *
  * @returns {boolean}
  */
 const canContainLocalesStrings = (filePath) => {
@@ -35,8 +61,10 @@ const canContainLocalesStrings = (filePath) => {
 
 /**
  * Collects contents of source files in given directory
+ *
  * @param {string} dirPath path to dir
  * @param {Array} [contents=[]] result acc
+ *
  * @returns {Array}
  */
 const getSrcFilesContents = (dirPath, contents = []) => {

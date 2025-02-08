@@ -17,11 +17,26 @@
     "options_antibanner_custom_filter_already_exists": {
         "message": "Αυτό το προσαρμοσμένο φίλτρο έχει ήδη προστεθεί"
     },
-    "popup_header_cta_link": {
-        "message": "Θέλετε να αποκλείσετε περισσότερα;"
+    "options_filters_annoyances_consent_description": {
+        "message": "Πρόκειται να ενεργοποιήσετε ένα ή περισσότερα φίλτρα ενόχλησης. Αποκλείουν στοιχεία που είτε δεν σχετίζονται με το περιεχόμενο του ιστότοπου είτε σχετίζονται αλλά ενοχλούν την εμπειρία χρήστη σας. Οι ιδιοκτήτες ιστότοπων ενδέχεται να θεωρούν αυτά τα στοιχεία υποχρεωτικά: εάν τα αποκλείσετε, ενδέχεται να παραβιάζετε τους όρους τους. Ορισμένες λειτουργίες των ιστότοπων ενδέχεται να μην είναι διαθέσιμες ή να μην λειτουργούν σωστά. Κατανοείτε και συμφωνείτε ότι είστε αποκλειστικά υπεύθυνοι για τη συμμόρφωση με τους όρους χρήσης των ιστότοπων που επισκέπτεστε και ότι η AdGuard δεν είναι υπεύθυνη για τη συμμόρφωσή σας με τους όρους χρήσης των ιστότοπων που επισκέπτεστε."
+    },
+    "options_filters_annoyances_consent_question": {
+        "message": "Πρέπει να ενεργοποιήσω τα φίλτρα;"
+    },
+    "options_filters_annoyances_consent_filter_policy": {
+        "message": "Για λεπτομέρειες σχετικά με το τι μπλοκάρουν τα φίλτρα ενόχλησης του AdGuard, ανατρέξτε στην ενότητα <a>Πολιτική φίλτρων<\/a>"
+    },
+    "options_filters_annoyances_consent_enable_button": {
+        "message": "Ενεργοποίηση"
+    },
+    "popup_header_update_filters": {
+        "message": "Έλεγχος για ενημερώσεις φίλτρων"
     },
     "options_popup_import_settings_wrong_file_ext": {
         "message": "Η επέκταση αρχείου θα πρέπει να είναι %extension%"
+    },
+    "popup_resume_protection_button": {
+        "message": "Επαναφορά"
     },
     "popup_adguard_for_ios": {
         "message": "AdGuard για iOS"
@@ -33,16 +48,13 @@
         "message": "έκδοση:"
     },
     "options_filters_filter_link": {
-        "message": "Μετάβαση στην σελίδα"
+        "message": "Μετάβαση στην αρχική σελίδα"
     },
     "options_filters_filter_updated": {
         "message": "ενημερώθηκε:"
     },
     "options_popup_version_update_disable_notification": {
         "message": "Απενεργοποίηση ειδοποιήσεων"
-    },
-    "popup_adguard_footer_title": {
-        "message": "Πάρτε το AdGuard για το κινητό"
     },
     "options_popup_call_to_action": {
         "message": "Εισάγετε μια έγκυρη διεύθυνση URL ή τη διαδρομή αρχείου του φίλτρου στο ανωτέρω πεδίο."
@@ -51,7 +63,7 @@
         "message": "Θα εγγραφείτε σε αυτό το φίλτρο."
     },
     "options_popup_url_title": {
-        "message": "Νέα συνδρομή φίλτρου"
+        "message": "Νέα Συνδρομή Φίλτρου"
     },
     "options_popup_url_placeholder": {
         "message": "Εισάγετε διεύθυνση URL ή διαδρομή αρχείου"
@@ -64,6 +76,15 @@
     },
     "options_popup_check_false_title": {
         "message": "Σφάλμα"
+    },
+    "options_popup_check_false_description": {
+        "message": "Σφάλμα κατά την προσθήκη του προσαρμοσμένου φίλτρου"
+    },
+    "options_add_custom_filter_modal_title": {
+        "message": "Προσθήκη προσαρμοσμένου φίλτρου"
+    },
+    "options_add_custom_filter_modal_filter_trusted": {
+        "message": "Έμπιστο"
     },
     "options_popup_try_again_button": {
         "message": "Δοκιμάστε ξανά"
@@ -90,19 +111,17 @@
         "message": "Εγγραφή"
     },
     "name": {
-        "message": "Adguard AdBlocker"
+        "message": "AdGuard AdBlocker"
     },
     "description": {
-        "message": "Απαράμιλλη επέκταση adblock έναντι διαφημίσεων και αναδυόμενων παραθύρων. Αποκλείει διαφημίσεις σε Facebook, YouTube και σε όλους τους άλλους ιστότοπους."
+        "message": "Απαράμιλλη επέκταση adblock που αποκλείει διαφημίσεις και αναδυόμενα σε Facebook, YouTube και άλλους ιστότοπους.",
+        "description": "TEXT MAX LENGTH: 132"
     },
     "background_tab_title": {
         "message": "Καρτέλα φόντου"
     },
     "options_allowlist": {
         "message": "Επιτρεπόμενη λίστα"
-    },
-    "options_allowlist_desc": {
-        "message": "Το AdGuard δεν φιλτράρει ιστότοπους από τη λίστα επιτρεπόμενων."
     },
     "options_allowlist_invert": {
         "message": "Αντιστροφή της λίστας επιτρεπόμενων"
@@ -114,10 +133,7 @@
         "message": "Κανόνες χρήστη"
     },
     "filtering_log_modified_rules": {
-        "message": "Τροποποιημένοι κανόνες:"
-    },
-    "filtering_log_privacy_applied_rules": {
-        "message": "Η Λειτουργία Απόκρυψης εφαρμόστηκε"
+        "message": "Τροποποιημένοι κανόνες: %rules_count%"
     },
     "filtering_log_in_allowlist": {
         "message": "Η ιστοσελίδα επιτρέπεται"
@@ -176,11 +192,17 @@
     "options_filters_no_enabled": {
         "message": "Δεν ενεργοποιήθηκαν φίλτρα"
     },
+    "options_filters_filter_trusted_tag_desc": {
+        "message": "Επιλέξατε να εμπιστευτείτε αυτό το φίλτρο"
+    },
     "options_add_custom_filter": {
         "message": "Προσθήκη προσαρμοσμένου φίλτρου"
     },
     "options_empty_custom_filter": {
         "message": "Δεν έχετε προσαρμοσμένα φίλτρα ακόμα"
+    },
+    "options_loader_applying_changes": {
+        "message": "Εφαρμογή αλλαγών..."
     },
     "options_editor_indicator_saving": {
         "message": "Αποθήκευση..."
@@ -188,20 +210,14 @@
     "options_editor_indicator_saved": {
         "message": "Αποθηκεύτηκε"
     },
-    "options_popup_import_success_title": {
-        "message": "Οι ρυθμίσεις εισήχθησαν με επιτυχία"
-    },
-    "options_popup_import_error_title": {
-        "message": "Σφάλμα κατά την εισαγωγή των ρυθμίσεων"
+    "options_popup_import_error_file_description": {
+        "message": "Κάτι πήγε στραβά"
     },
     "options_popup_trusted_filter_title": {
         "message": "Έμπιστο"
     },
     "options_popup_trusted_filter_description": {
         "message": "Τα αξιόπιστα φίλτρα μπορούν να χρησιμοποιούν ισχυρούς τροποποιητές κανόνων φιλτραρίσματος που μπορεί να είναι επικίνδυνοι σε λάθος χέρια. Μην επιλέξετε αυτό το πλαίσιο εκτός εάν το εμπιστεύεστε πλήρως."
-    },
-    "popup_site_filtering_state": {
-        "message": "Προστασία σε αυτή την ιστοσελίδα"
     },
     "popup_site_filtering_state_secure_page": {
         "message": "Ασφαλής σελίδα"
@@ -215,17 +231,35 @@
     "popup_site_filtering_state_paused": {
         "message": "Η προστασία τέθηκε σε παύση"
     },
+    "popup_site_filtering_state_subtitle_all_websites": {
+        "message": "για όλες τις ιστοσελίδες"
+    },
     "popup_site_exception_information": {
         "message": "Το φιλτράρισμα είναι απενεργοποιημένο επειδή μπορεί να επηρεάσει τη λειτουργία αυτού του ιστότοπου."
     },
     "popup_tab_blocked_count": {
         "message": "Αποκλείστηκαν: %num%"
     },
-    "popup_tab_blocked_all_count": {
-        "message": "Συνολικά: %num%"
-    },
     "popup_statistics_total": {
         "message": "Συνολικά"
+    },
+    "popup_statistics_all_categories": {
+        "message": "Όλα"
+    },
+    "popup_statistics_category_advertising": {
+        "message": "Διαφήμιση"
+    },
+    "popup_statistics_category_trackers": {
+        "message": "Ιχνηλάτες"
+    },
+    "popup_statistics_category_social_media": {
+        "message": "Μέσα κοινωνικής δικτύωσης"
+    },
+    "popup_statistics_category_cdn": {
+        "message": "CDN"
+    },
+    "popup_statistics_category_other": {
+        "message": "Άλλα"
     },
     "popup_statistics_week_days_mon": {
         "message": "Δευ"
@@ -317,44 +351,14 @@
     "options_popup_version_update_offer_button_text": {
         "message": "ΜΑΘΕΤΕ ΠΕΡΙΣΣΟΤΕΡΑ"
     },
-    "popup_block_site_ads_option": {
-        "message": "Αποκλεισμός διαφημίσεων σε αυτόν τον ιστότοπο"
-    },
     "popup_security_report": {
         "message": "Αναφορά ασφάλειας ιστότοπου"
     },
-    "popup_open_settings": {
-        "message": "Ρυθμίσεις AdGuard"
-    },
-    "popup_block_site_ads_android": {
-        "message": "Αποκλεισμός διαφημίσεων στον ιστότοπο"
-    },
-    "popup_security_report_android": {
-        "message": "Αναφορά ασφαλείας"
-    },
-    "popup_in_allowlist_android": {
-        "message": "Στη επιτρεπόμενη λίστα"
-    },
-    "popup_site_protection_disabled_android": {
-        "message": "Η προστασία τέθηκε σε παύση"
-    },
-    "popup_open_log_android": {
-        "message": "Αρχείο καταγραφής φιλτραρίσματος"
-    },
-    "context_block_site_ads": {
-        "message": "Αποκλεισμός διαφημίσεων σε αυτόν τον ιστότοπο..."
-    },
-    "context_block_site_element": {
-        "message": "Αποκλεισμός ενός στοιχείου..."
-    },
     "context_security_report": {
-        "message": "Άνοιγμα αναφοράς ασφάλειας ιστότοπου..."
+        "message": "Αναφορά ασφάλειας ιστότοπου"
     },
     "context_complaint_website": {
-        "message": "Υποβολή καταγγελίας για αυτόν τον ιστότοπο..."
-    },
-    "context_site_filtering_disabled": {
-        "message": "Το AdGuard δεν μπορεί να εκτελεστεί σε αυτόν τον τομέα"
+        "message": "Αναφέρετε ένα πρόβλημα"
     },
     "context_disable_protection": {
         "message": "Παύση προστασίας AdGuard"
@@ -366,10 +370,10 @@
         "message": "Η προστασία AdGuard έχει τεθεί σε παύση"
     },
     "context_open_settings": {
-        "message": "Ρυθμίσεις AdGuard..."
+        "message": "Ρυθμίσεις AdGuard"
     },
     "context_open_log": {
-        "message": "Καταγραφές φιλτραρίσματος..."
+        "message": "Αρχείο καταγραφής φιλτραρίσματος"
     },
     "context_site_exception": {
         "message": "Αυτή η ιστοσελίδα βρίσκεται στις εξαιρέσεις"
@@ -385,6 +389,9 @@
     },
     "alert_popup_filter_enabled_title": {
         "message": "Αυτόματη ενεργοποίηση των φίλτρων"
+    },
+    "alert_popup_filter_enabled_desc": {
+        "message": "Το %filter_name% ενεργοποιήθηκε αυτόματα"
     },
     "filters_download_title": {
         "message": "Η βάση δεδομένων φίλτρων φορτώνει..."
@@ -409,12 +416,6 @@
     },
     "filtering_log_search_tabs_placeholder": {
         "message": "Αναζήτηση σε καρτέλες"
-    },
-    "filtering_log_preserve_log_off": {
-        "message": "Διατήρηση καταγραφών: Απενεργοποίηση"
-    },
-    "filtering_log_preserve_log_on": {
-        "message": "Διατήρηση ημερολογίου: Ενεργοποίηση"
     },
     "filtering_refresh_tab_short": {
         "message": "Ανανέωση"
@@ -443,9 +444,6 @@
     "filtering_table_filter": {
         "message": "Φίλτρο"
     },
-    "filtering_table_empty_reload_page_desc": {
-        "message": "<reset>Απενεργοποίηση φίλτρων<\/reset> ή <refresh>επαναφόρτωση σελίδας<\/refresh> για να δείτε το αρχείων καταγραφής συμβάντων φιλτραρίσματος."
-    },
     "filtering_modal_info_title": {
         "message": "Λεπτομέρειες σύνδεσης"
     },
@@ -464,9 +462,6 @@
     "filtering_modal_rules": {
         "message": "Κανόνες:"
     },
-    "filtering_modal_privacy": {
-        "message": "Λειτουργία Απόκρυψης:"
-    },
     "filtering_modal_filter": {
         "message": "Φίλτρο:"
     },
@@ -479,6 +474,9 @@
     "filtering_modal_unblock": {
         "message": "Ξεμπλοκάρισμα"
     },
+    "filtering_modal_remove_user": {
+        "message": "Διαγραφή κανόνα"
+    },
     "filtering_modal_preview_request_button": {
         "message": "Προεπισκόπηση"
     },
@@ -490,9 +488,6 @@
     },
     "filtering_modal_status_text_desc": {
         "message": "Κατάσταση:"
-    },
-    "filtering_modal_status_text_error": {
-        "message": "Καμία ανταπόκριση δεν ελήφθη"
     },
     "filtering_modal_status_text_loading": {
         "message": "Φόρτωση..."
@@ -515,6 +510,9 @@
     "filtering_modal_third_party": {
         "message": "Εφαρμογή μόνο σε αιτήσεις τρίτων"
     },
+    "filtering_modal_remove_param": {
+        "message": "Κατάργηση παραμέτρων ερωτήματος"
+    },
     "filtering_modal_add_rule": {
         "message": "Προσθήκη κανόνα"
     },
@@ -530,11 +528,26 @@
     "filtering_modal_hide_full_url": {
         "message": "Απόκρυψη πλήρους URL"
     },
+    "filtering_modal_show_full_rule": {
+        "message": "Εμφάνιση πλήρους κανόνα"
+    },
+    "filtering_modal_hide_full_rule": {
+        "message": "Απόκρυψη πλήρους κανόνα"
+    },
+    "filtering_modal_show_full_element": {
+        "message": "Εμφάνιση πλήρους στοιχείου"
+    },
+    "filtering_modal_hide_full_element": {
+        "message": "Απόκρυψη πλήρους στοιχείου"
+    },
     "filtering_modal_copy_to_clipboard": {
         "message": "Αντιγραφή στο πρόχειρο"
     },
     "filtering_modal_copied": {
         "message": "Αντιγράφηκε"
+    },
+    "filtering_modal_converted_to": {
+        "message": "Μετατροπή σε:"
     },
     "filtering_log_filter_regular": {
         "message": "Κανονικά"
@@ -596,8 +609,14 @@
     "options_import_settings": {
         "message": "Εισαγωγή ρυθμίσεων"
     },
+    "options_report_bug": {
+        "message": "Αναφορά σφάλματος"
+    },
+    "options_leave_feedback": {
+        "message": "Αφήστε τα σχόλιά σας"
+    },
     "options_privacy": {
-        "message": "Λειτουργία Απόκρυψης"
+        "message": "Προστασία παρακολούθησης"
     },
     "options_update_antibanner_filters": {
         "message": "Έλεγχος για ενημερώσεις φίλτρων"
@@ -607,6 +626,9 @@
     },
     "options_check_update_progress": {
         "message": "Έλεγχος..."
+    },
+    "options_set_update_interval": {
+        "message": "Αυτόματη ενημέρωση φίλτρων"
     },
     "options_userfilter_export": {
         "message": "Εξαγωγή"
@@ -620,17 +642,14 @@
     "options_userfilter_description_key": {
         "message": "Μπορείτε να προσθέσετε τους δικούς σας κανόνες εδώ. Αυτή η επιλογή συνιστάται για προχωρημένους χρήστες εξοικειωμένους με HTML\/CSS. Διαβάστε τον <a>οδηγό κανόνων φίλτρου<\/a> για να μάθετε πώς να γράφετε τους δικούς σας κανόνες φίλτρου."
     },
-    "options_userfilter_line_break_off": {
-        "message": "Διακοπή γραμμής: Απενεργοποίηση"
-    },
-    "options_userfilter_line_break_on": {
-        "message": "Διακοπή γραμμής: Ενεργοποίηση"
-    },
     "options_open_changelog": {
         "message": "Αρχείο αλλαγών"
     },
     "options_safebrowsing_enabled": {
         "message": "Προστασία ηλεκτρονικού ψαρέματος και κακόβουλου λογισμικού"
+    },
+    "options_safebrowsing_enabled_desc": {
+        "message": "Ειδικά φίλτρα που σας προστατεύουν από <a>ιστότοπους κακόβουλους και το ηλεκτρονικό ψάρεμα (phishing)<\/a>."
     },
     "options_site": {
         "message": "Επίσημη ιστοσελίδα"
@@ -646,6 +665,36 @@
     },
     "options_miscellaneous_settings": {
         "message": "Επιπρόσθετες ρυθμίσεις"
+    },
+    "options_rule_limits": {
+        "message": "Όρια κανόνων"
+    },
+    "options_rule_limits_dynamic": {
+        "message": "Δυναμικοί κανόνες"
+    },
+    "options_rule_limits_static_rulesets": {
+        "message": "Στατικά σύνολα κανόνων"
+    },
+    "options_rule_limits_static_rules": {
+        "message": "Στατικοί κανόνες"
+    },
+    "options_rule_limits_warning_title": {
+        "message": "Το πρόγραμμα περιήγησης έχει τροποποιήσει τη λίστα των ενεργών φίλτρων"
+    },
+    "options_rule_limits_warning_explanation_title": {
+        "message": "Τι συνέβη;"
+    },
+    "options_rule_limits_warning_explanation_description": {
+        "message": "Έγινε υπέρβαση του ορίου των ενεργών ενσωματωμένων κανόνων μετά από μια ενημέρωση ή την προσθήκη μιας νέας επέκτασης. Σύμφωνα με το Manifest V3, το πρόγραμμα περιήγησης Chrome αντέδρασε απενεργοποιώντας όλα τα ενσωματωμένα φίλτρα της επέκτασης εκτός από τα προεπιλεγμένα."
+    },
+    "options_rule_limits_warning_list_enabled_before_title": {
+        "message": "Φίλτρα που ενεργοποιήθηκαν πριν από την ενημέρωση"
+    },
+    "options_rule_limits_warning_list_enabled_now_title": {
+        "message": "Τα φίλτρα ενεργοποιήθηκαν"
+    },
+    "options_rule_limits_warning_actions_title": {
+        "message": "Οι πιθανές σας ενέργειες"
     },
     "options_show_adguard_full_version_title": {
         "message": "Εμφάνιση πληροφοριών σχετικά με την πλήρη έκδοση του AdGuard"
@@ -674,9 +723,6 @@
     "options_collect_hit_stats_title": {
         "message": "Βοήθεια στην ανάπτυξη των φίλτρων AdGuard"
     },
-    "options_collect_hit_stats_desc": {
-        "message": "Αποστολή <a>ανώνυμα στατιστικά στοιχεία χρήσης των φίλτρων διαφημίσεων<\/a> που θα μας βοηθήσουν να τα βελτιώσουμε και να τα βελτιστοποιήσουμε."
-    },
     "options_show_context_menu_title": {
         "message": "Προσθήκη στοιχείου AdGuard στο μενού περιβάλλοντος του περιηγητή"
     },
@@ -687,10 +733,10 @@
         "message": "Λίστες φίλτρων βελτιστοποιημένες για κινητές συσκευές"
     },
     "options_privacy_title": {
-        "message": "Λειτουργία Απόκρυψης"
+        "message": "Προστασία παρακολούθησης"
     },
-    "options_privacy_desc": {
-        "message": "Προστατέψτε την ταυτότητά σας και τα ευαίσθητα προσωπικά σας στοιχεία από χιλιάδες διαδικτυακούς ιχνηλάτες, αποκλείοντας τις πιο δημοφιλείς μεθόδους παρακολούθησης."
+    "options_hide_referrer_title": {
+        "message": " Απόκρυψη Παραπομπής από τρίτα μέρη"
     },
     "options_hide_search_queries_title": {
         "message": "Απόκρυψη ερωτημάτων αναζήτησης"
@@ -709,6 +755,9 @@
     },
     "options_remove_client_data_title": {
         "message": "Αφαίρεση αιτήματος X-Client-Data"
+    },
+    "options_disable_webrtc_title": {
+        "message": "Απενεργοποίηση WebRTC"
     },
     "options_strip_tracking_params_title": {
         "message": "Αφαίρεση παραμέτρων παρακολούθησης"
@@ -750,7 +799,7 @@
         "message": "Διακόπτης προστασίας"
     },
     "short_name": {
-        "message": "Adguard AdBlocker"
+        "message": "AdGuard"
     },
     "options_about": {
         "message": "Σχετικά με"
@@ -777,13 +826,10 @@
         "message": "Κατάργηση"
     },
     "options_nav_better_than_extension": {
-        "message": "Γιατί το πλήρες πρόγραμμα AdGuard είναι καλύτερο από την επέκταση;"
+        "message": "Γιατί η εφαρμογή AdGuard είναι καλύτερη από την επέκταση;"
     },
     "options_nav_compare": {
-        "message": "Πώς συγκρίνονται"
-    },
-    "options_nav_hide": {
-        "message": "Απόκρυψη"
+        "message": "Σύγκριση μεταξύ τους"
     },
     "options_filters_search": {
         "message": "Αναζήτηση"
@@ -791,14 +837,20 @@
     "options_about_title": {
         "message": "Επέκταση προγράμματος περιήγησης AdGuard"
     },
+    "group_description_custom": {
+        "message": "Δημιουργήστε τα δικά σας φίλτρα για να ρυθμίσετε το φιλτράρισμα ιστού σύμφωνα με τις προτιμήσεις σας"
+    },
     "fullscreen_user_rules_title": {
         "message": "Κανόνες χρήστη"
     },
-    "options_user_rules_editor_stub_title": {
-        "message": "Ο διαμορφωτής έχει ήδη ανοίξει"
-    },
     "options_user_rules_editor_stub_go_to_editor_button": {
         "message": "Μετάβαση στον διαμορφωτή"
+    },
+    "options_editor_open_fullscreen_button_tooltip": {
+        "message": "Άνοιγμα προγράμματος επεξεργασίας σε νέα καρτέλα"
+    },
+    "options_editor_close_fullscreen_button_tooltip": {
+        "message": "Έξοδος από τη λειτουργία παραθύρου"
     },
     "options_clear_stats_confirm_modal_title": {
         "message": "Εκκαθάριση στατιστικών;"
@@ -824,27 +876,6 @@
     "filtering_log_details_modal_try_again": {
         "message": "Δοκιμάστε ξανά"
     },
-    "filtering_log_tag_tooltip_first_party": {
-        "message": "Μόνο αιτήματα πρώτου μέρους"
-    },
-    "filtering_log_tag_tooltip_third_party": {
-        "message": "Μόνο αιτήματα τρίτου μέρους"
-    },
-    "filtering_log_tag_tooltip_regular": {
-        "message": "Μόνο αιτήματα που έχουν επεξεργαστεί χωρίς φίλτρο"
-    },
-    "filtering_log_tag_tooltip_allowed": {
-        "message": "Επιτρέπονται μόνο μη αποκλεισμένα αιτήματα"
-    },
-    "filtering_log_tag_tooltip_blocked": {
-        "message": "Μόνο αποκλεισμένα αιτήματα"
-    },
-    "filtering_log_tag_tooltip_modified": {
-        "message": "Μόνο τροποποιημένα αιτήματα"
-    },
-    "filtering_log_tag_tooltip_user_rules": {
-        "message": "Μόνο αιτήματα που έχουν τροποποιηθεί από τους κανόνες χρήστη"
-    },
     "filtering_log_tag_tooltip_html": {
         "message": "Έγγραφα και υπο-έγγραφα"
     },
@@ -862,9 +893,6 @@
     },
     "filtering_log_tag_tooltip_media": {
         "message": "Πολυμέσα"
-    },
-    "filtering_log_tag_tooltip_other": {
-        "message": "Γραμματοσειρές, pings, WebRTC, Websocket, κλπ."
     },
     "filtering_log_badge_tooltip_third_party": {
         "message": "Αίτημα τρίτου μέρους"
@@ -913,5 +941,14 @@
     },
     "blocking_pages_btn_proceed": {
         "message": "Συνεχίστε ούτως ή άλλως"
+    },
+    "text_collapser_show_default": {
+        "message": "Εμφάνιση πλήρους κειμένου"
+    },
+    "text_collapser_hide_default": {
+        "message": "Απόκρυψη πλήρους κειμένου"
+    },
+    "close_button_title": {
+        "message": "Κλείσιμο"
     }
 }

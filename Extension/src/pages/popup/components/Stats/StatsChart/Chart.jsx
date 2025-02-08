@@ -1,9 +1,28 @@
+/**
+ * @file
+ * This file is part of AdGuard Browser Extension (https://github.com/AdguardTeam/AdguardBrowserExtension).
+ *
+ * AdGuard Browser Extension is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * AdGuard Browser Extension is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with AdGuard Browser Extension. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 import React, { useEffect } from 'react';
+
 import c3 from 'c3';
 import 'c3/c3.css';
 
 import { reactTranslator } from '../../../../../common/translators/reactTranslator';
-import { TIME_RANGES } from '../../../constants';
+import { TimeRange } from '../../../constants';
 
 import './chart.pcss';
 
@@ -43,22 +62,22 @@ const monthsAsString = (monthIndex) => {
 const selectRequestsStatsData = (stats, range, type) => {
     const result = [];
     switch (range) {
-        case TIME_RANGES.DAY:
+        case TimeRange.Day:
             stats.today.forEach((d) => {
                 result.push(d[type]);
             });
             break;
-        case TIME_RANGES.WEEK:
+        case TimeRange.Week:
             stats.lastWeek.forEach((d) => {
                 result.push(d[type]);
             });
             break;
-        case TIME_RANGES.MONTH:
+        case TimeRange.Month:
             stats.lastMonth.forEach((d) => {
                 result.push(d[type]);
             });
             break;
-        case TIME_RANGES.YEAR:
+        case TimeRange.Year:
             stats.lastYear.forEach((d) => {
                 result.push(d[type]);
             });
@@ -84,7 +103,7 @@ const getCategoriesLines = (statsData, range) => {
     const MONTHS_PER_YEAR = 12;
 
     switch (range) {
-        case TIME_RANGES.DAY:
+        case TimeRange.Day:
             for (let i = 1; i <= HOURS_PER_DAY; i += 1) {
                 if (i % 3 === 0) {
                     const hour = (i + now.getHours()) % HOURS_PER_DAY;
@@ -97,7 +116,7 @@ const getCategoriesLines = (statsData, range) => {
                 }
             }
             break;
-        case TIME_RANGES.WEEK:
+        case TimeRange.Week:
             for (let i = 0; i < DAYS_PER_WEEK; i += 1) {
                 categories.push(dayOfWeekAsString((day + i) % DAYS_PER_WEEK));
                 lines.push({
@@ -105,7 +124,7 @@ const getCategoriesLines = (statsData, range) => {
                 });
             }
             break;
-        case TIME_RANGES.MONTH:
+        case TimeRange.Month:
             for (let i = 0; i <= DAYS_PER_MONTH; i += 1) {
                 if (i % 3 === 0) {
                     const c = ((i + now.getDate()) % lastDayOfPrevMonth) + 1;
@@ -118,7 +137,7 @@ const getCategoriesLines = (statsData, range) => {
                 }
             }
             break;
-        case TIME_RANGES.YEAR:
+        case TimeRange.Year:
             for (let i = 0; i <= MONTHS_PER_YEAR; i += 1) {
                 categories.push(monthsAsString((month + i) % MONTHS_PER_YEAR));
                 categories = categories.slice(-statsData.length);
@@ -137,7 +156,12 @@ const getCategoriesLines = (statsData, range) => {
     };
 };
 
-export const Chart = ({ stats, range, type }) => {
+export const Chart = ({
+    stats,
+    range,
+    type,
+    small,
+}) => {
     useEffect(() => {
         const statsData = selectRequestsStatsData(stats, range, type);
         const categoriesLines = getCategoriesLines(statsData, range);
@@ -153,7 +177,7 @@ export const Chart = ({ stats, range, type }) => {
         c3.generate({
             bindTo: '#chart',
             size: {
-                height: 230,
+                height: small ? 178 : 218,
             },
             data: {
                 columns: [
@@ -230,7 +254,7 @@ export const Chart = ({ stats, range, type }) => {
                 this.svg[0][0].getElementsByTagName('defs')[0].innerHTML += grad1;
             },
         });
-    }, [range, type, stats]);
+    }, [range, type, stats, small]);
 
     return <div className="chart" id="chart" />;
 };

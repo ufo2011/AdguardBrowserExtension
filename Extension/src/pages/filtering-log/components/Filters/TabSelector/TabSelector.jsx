@@ -1,19 +1,43 @@
+/**
+ * @file
+ * This file is part of AdGuard Browser Extension (https://github.com/AdguardTeam/AdguardBrowserExtension).
+ *
+ * AdGuard Browser Extension is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * AdGuard Browser Extension is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with AdGuard Browser Extension. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /*
 eslint-disable jsx-a11y/click-events-have-key-events,
 jsx-a11y/no-noninteractive-element-interactions
 */
+
 import React, {
-    useContext, useEffect, useState, useRef,
+    useContext,
+    useEffect,
+    useState,
+    useRef,
 } from 'react';
-import cn from 'classnames';
 import { observer } from 'mobx-react';
 
-import { rootStore } from '../../../stores/RootStore';
-import { reactTranslator } from '../../../../../common/translators/reactTranslator';
-import { useOutsideClick } from '../../../../common/hooks/useOutsideClick';
-import { useKeyDown } from '../../../../common/hooks/useKeyDown';
-import { WASTE_CHARACTERS } from '../../../../../common/constants';
+import cn from 'classnames';
 
+import { translator } from '../../../../../common/translators/translator';
+import { WASTE_CHARACTERS } from '../../../../../common/constants';
+import { Icon } from '../../../../common/components/ui/Icon';
+import { rootStore } from '../../../stores/RootStore';
+import { useOutsideClick } from '../../../../common/hooks/useOutsideClick';
+import { useOutsideFocus } from '../../../../common/hooks/useOutsideFocus';
+import { useKeyDown } from '../../../../common/hooks/useKeyDown';
 import { Search } from '../../Search';
 
 import './tab-selector.pcss';
@@ -36,7 +60,7 @@ const TabSelector = observer(() => {
         if (refResult.current?.childNodes) {
             setResultItems(Array.from(refResult.current.childNodes));
         }
-    }, [searchValue]);
+    }, [selectIsOpen, searchValue]);
 
     useEffect(() => {
         if (resultItems) {
@@ -55,7 +79,9 @@ const TabSelector = observer(() => {
         if (!tabs.find((tab) => tab.title === searchValue)) {
             setSearchValue(prevTabTitle);
         }
-        logStore.setSelectIsOpenState(false);
+        if (selectIsOpen) {
+            logStore.setSelectIsOpenState(false);
+        }
         setCurrentStep(0);
     };
 
@@ -73,12 +99,18 @@ const TabSelector = observer(() => {
     });
 
     useKeyDown(refResult, 'Enter', () => {
+        // Selected with the arrow buttons
         const targetElem = resultItems?.find(
             (el) => el.classList.contains(SELECTED_CLASS_NAME),
         );
-        if (targetElem) {
+        // Selected with the tab button
+        const activeElem = resultItems?.find(
+            (el) => el === document.activeElement,
+        );
+
+        if (activeElem || targetElem) {
             (async () => {
-                await selectionHandlerSearch(Number(targetElem.id));
+                await selectionHandlerSearch(Number(activeElem ? activeElem.id : targetElem.id));
             })();
             document.activeElement.blur();
         }
@@ -99,6 +131,8 @@ const TabSelector = observer(() => {
     });
 
     useOutsideClick(refSelector, cancelTabSearch);
+
+    useOutsideFocus(refSelector, cancelTabSearch);
 
     useEffect(() => {
         const selectedTab = tabs.find((tab) => tab.tabId === selectedTabId);
@@ -121,25 +155,40 @@ const TabSelector = observer(() => {
     const renderSearchResult = () => {
         const searchValueString = searchValue.replace(WASTE_CHARACTERS, '\\$&');
         const searchQuery = new RegExp(searchValueString, 'ig');
-        return tabs.map((tab) => {
-            const { title, tabId } = tab;
 
-            const itemClassName = cn(
-                'tab-selector__result-item',
-                { 'tab-selector__result-item--active': tabId === selectedTabId },
+        return tabs.map((tab) => {
+            const { title, tabId, domain } = tab;
+
+            const isActive = tabId === selectedTabId;
+
+            const itemTextClassName = cn(
+                'tab-selector__result-item--text',
+                { 'tab-selector__result-item--text--active': isActive },
             );
 
-            if (title.match(searchQuery)) {
+            if (
+                title.match(searchQuery)
+                || (domain && domain.match(searchQuery))
+            ) {
                 return (
-                    <button
+                    <div
                         key={tabId}
                         id={tabId}
-                        type="button"
-                        className={itemClassName}
+                        role="button"
+                        className="tab-selector__result-item"
                         onClick={() => { selectionHandlerSearch(tabId); }}
+                        tabIndex={0}
                     >
-                        {title}
-                    </button>
+                        <span className={itemTextClassName}>
+                            {title}
+                        </span>
+                        {isActive && (
+                            <Icon
+                                id="#tick"
+                                classname="icon icon--24 icon--green-default"
+                            />
+                        )}
+                    </div>
                 );
             }
 
@@ -178,7 +227,7 @@ const TabSelector = observer(() => {
                     ref={searchInputRef}
                     changeHandler={searchChangeHandler}
                     value={searchValue}
-                    placeholder={reactTranslator.getMessage('filtering_log_search_tabs_placeholder')}
+                    placeholder={translator.getMessage('filtering_log_search_tabs_placeholder')}
                     handleClear={handleClear}
                     onFocus={handleClear}
                     onOpenSelect={selectIsOpen}

@@ -1,21 +1,43 @@
-import { promises as fs } from 'fs';
-import path from 'path';
+/**
+ * @file
+ * This file is part of AdGuard Browser Extension (https://github.com/AdguardTeam/AdguardBrowserExtension).
+ *
+ * AdGuard Browser Extension is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * AdGuard Browser Extension is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with AdGuard Browser Extension. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+import { promises as fs } from 'node:fs';
+import path from 'node:path';
+
 import Crx from 'crx';
+
 import {
-    ENVS,
-    BROWSERS,
+    BuildTargetEnv,
+    Browser,
     BUILD_PATH,
     CHROME_CERT,
     CHROME_UPDATE_URL,
     CHROME_CODEBASE_URL,
+    BUILD_ENV,
 } from '../constants';
-import { getBrowserConf, getEnvConf } from '../helpers';
+
+import { getBrowserConf, getEnvConf } from './helpers';
 
 export const crx = async (browser) => {
-    const buildEnv = process.env.BUILD_ENV;
+    const buildEnv = BUILD_ENV;
 
     // Guards
-    if (browser === BROWSERS.CHROME && buildEnv !== ENVS.BETA) {
+    if (browser === Browser.Chrome && buildEnv !== BuildTargetEnv.Beta) {
         throw new Error('CRX for chrome is built only for beta');
     }
 

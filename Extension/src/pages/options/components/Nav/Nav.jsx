@@ -1,108 +1,100 @@
-import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
-import { observer } from 'mobx-react';
+/**
+ * @file
+ * This file is part of AdGuard Browser Extension (https://github.com/AdguardTeam/AdguardBrowserExtension).
+ *
+ * AdGuard Browser Extension is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * AdGuard Browser Extension is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with AdGuard Browser Extension. If not, see <http://www.gnu.org/licenses/>.
+ */
 
-import { COMPARE_URL } from '../../../constants';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+import { OptionsPageSections } from '../../../../common/nav';
 import { reactTranslator } from '../../../../common/translators/reactTranslator';
-import { rootStore } from '../../stores/RootStore';
 
 import './nav.pcss';
 
-const Nav = observer(({ closeSidebar }) => {
-    const { settingsStore } = useContext(rootStore);
-    const hideCompare = async () => {
-        await settingsStore.hideAdguardPromoInfo();
-    };
-
+export const Nav = ({ closeSidebar }) => {
     const onClick = () => {
         closeSidebar();
     };
 
+    const getNavLinkClassName = (navData) => (navData.isActive ? 'nav__item nav__item--active' : 'nav__item');
+
     return (
         <div className="nav">
             <NavLink
-                className="nav__item"
-                exact
-                activeClassName="nav__item--active"
+                className={getNavLinkClassName}
                 to="/"
                 onClick={onClick}
+                end
             >
                 {reactTranslator.getMessage('options_general_settings')}
             </NavLink>
             <NavLink
-                className="nav__item"
-                activeClassName="nav__item--active"
-                to="/filters"
+                className={getNavLinkClassName}
+                to={`/${OptionsPageSections.filters}`}
                 onClick={onClick}
             >
                 {reactTranslator.getMessage('options_filters')}
             </NavLink>
             <NavLink
-                className="nav__item"
-                activeClassName="nav__item--active"
-                to="/stealth"
+                className={getNavLinkClassName}
+                to={`/${OptionsPageSections.stealth}`}
                 onClick={onClick}
             >
                 {reactTranslator.getMessage('options_privacy')}
             </NavLink>
             <NavLink
-                className="nav__item"
-                activeClassName="nav__item--active"
-                to="/allowlist"
+                className={getNavLinkClassName}
+                to={`/${OptionsPageSections.allowlist}`}
                 onClick={onClick}
             >
                 {reactTranslator.getMessage('options_allowlist')}
             </NavLink>
             <NavLink
-                className="nav__item"
-                activeClassName="nav__item--active"
-                to="/user-filter"
+                className={getNavLinkClassName}
+                to={`/${OptionsPageSections.userFilter}`}
                 onClick={onClick}
             >
                 {reactTranslator.getMessage('options_userfilter')}
             </NavLink>
             <NavLink
-                className="nav__item"
-                activeClassName="nav__item--active"
-                to="/miscellaneous"
+                className={getNavLinkClassName}
+                to={`/${OptionsPageSections.miscellaneous}`}
                 onClick={onClick}
             >
                 {reactTranslator.getMessage('options_miscellaneous_settings')}
             </NavLink>
+            {
+                __IS_MV3__
+                    && (
+                        <NavLink
+                            className={getNavLinkClassName}
+                            to={`/${OptionsPageSections.ruleLimits}`}
+                            onClick={onClick}
+                        >
+                            {reactTranslator.getMessage('options_rule_limits')}
+                        </NavLink>
+                    )
+            }
             <NavLink
-                className="nav__item"
-                activeClassName="nav__item--active"
-                to="/about"
+                className={getNavLinkClassName}
+                to={`/${OptionsPageSections.about}`}
                 onClick={onClick}
             >
                 {reactTranslator.getMessage('options_about')}
             </NavLink>
-            {settingsStore.showAdguardPromoInfo && (
-                <div className="nav__desc">
-                    <div className="nav__message">
-                        {reactTranslator.getMessage('options_nav_better_than_extension')}
-                    </div>
-                    <div>
-                        <a
-                            className="nav__link"
-                            href={COMPARE_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {reactTranslator.getMessage('options_nav_compare')}
-                        </a>
-                    </div>
-                    <button
-                        type="button"
-                        className="nav__hide"
-                        onClick={hideCompare}
-                    >
-                        {reactTranslator.getMessage('options_nav_hide')}
-                    </button>
-                </div>
-            )}
         </div>
     );
-});
-
-export { Nav };
+};
