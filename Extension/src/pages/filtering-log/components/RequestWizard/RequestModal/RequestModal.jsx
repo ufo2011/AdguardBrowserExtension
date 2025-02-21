@@ -1,4 +1,23 @@
+/**
+ * @file
+ * This file is part of AdGuard Browser Extension (https://github.com/AdguardTeam/AdguardBrowserExtension).
+ *
+ * AdGuard Browser Extension is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * AdGuard Browser Extension is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with AdGuard Browser Extension. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+
 import React, {
     useContext,
     useEffect,
@@ -8,17 +27,18 @@ import React, {
 } from 'react';
 import Modal from 'react-modal';
 import { observer } from 'mobx-react';
+
 import cn from 'classnames';
 
 import { rootStore } from '../../../stores/RootStore';
 import { RequestInfo } from '../RequestInfo';
-import { WIZARD_STATES } from '../../../stores/WizardStore';
 import { RequestCreateRule } from '../RequestCreateRule';
 import { optionsStorage } from '../../../../options/options-storage';
+import { WizardRequestState } from '../../../constants';
 import { RequestPreview } from '../RequestPreview';
 import { DEFAULT_MODAL_WIDTH_PX } from '../constants';
 
-import './RequestModal.pcss';
+import './request-modal.pcss';
 
 Modal.setAppElement('#root');
 
@@ -56,18 +76,18 @@ const RequestModal = observer(() => {
     let modalContent;
 
     switch (requestModalState) {
-        case WIZARD_STATES.VIEW_REQUEST: {
+        case WizardRequestState.View: {
             modalContent = <RequestInfo />;
             break;
         }
 
-        case WIZARD_STATES.BLOCK_REQUEST:
-        case WIZARD_STATES.UNBLOCK_REQUEST: {
+        case WizardRequestState.Block:
+        case WizardRequestState.Unblock: {
             modalContent = <RequestCreateRule />;
             break;
         }
 
-        case WIZARD_STATES.PREVIEW_REQUEST: {
+        case WizardRequestState.Preview: {
             modalContent = <RequestPreview />;
             break;
         }

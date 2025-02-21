@@ -1,6 +1,14 @@
 /* eslint-disable max-len */
-import { promises as fsp } from 'fs';
-import path from 'path';
+import { promises as fsp } from 'node:fs';
+import path from 'node:path';
+
+import {
+    describe,
+    it,
+    expect,
+    beforeAll,
+} from 'vitest';
+
 import { DevToolsRulesConstructor } from '../../../../Extension/src/content-script/devtools/devtools-rules-constructor';
 
 describe('DevToolsRulesConstructor', () => {

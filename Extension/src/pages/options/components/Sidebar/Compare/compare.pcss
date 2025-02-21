@@ -1,0 +1,28 @@
+.compare {
+    position: fixed;
+    z-index: 6;
+    margin: auto auto 0;
+    width: 208px;
+    bottom: 16px;
+    left: 16px;
+    padding: 24px;
+    border-radius: 8px;
+    background-color: var(--fills-backgrounds-page-background-default);
+    word-break: break-word;
+    box-shadow: 8px 8px 24px 0px var(--shadow-0-1);
+
+    &__message {
+        margin-bottom: 16px;
+        line-height: 22px;
+    }
+
+    &__close {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        border: 0;
+        padding: 0;
+        background-color: transparent;
+        cursor: pointer;
+    }
+}

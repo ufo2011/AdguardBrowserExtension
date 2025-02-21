@@ -17,11 +17,32 @@
     "options_antibanner_custom_filter_already_exists": {
         "message": "Такий власний фільтр уже додано"
     },
+    "options_filters_annoyances_consent_title": {
+        "message": "Будь ласка, уважно прочитайте текст нижче, перш ніж вмикати фільтри подразників"
+    },
+    "options_filters_annoyances_consent_description": {
+        "message": "Ви збираєтеся увімкнути один або кілька фільтрів подразників. Вони блокують елементи, які або не мають стосунку до вмісту сайту, або мають, але дратують користувача. Власники сайтів можуть вважати ці елементи обовʼязковими: якщо ви блокуєте їх, ви можете порушити їхні умови; частина функціональності сайтів може бути недоступною або працювати неправильно. Ви розумієте та погоджуєтеся з тим, що несете повну відповідальність за дотримання умов використання сайтів, які ви відвідуєте, і що AdGuard не несе відповідальності за дотримання вами умов використання сайтів, які ви відвідуєте."
+    },
+    "options_filters_annoyances_consent_question": {
+        "message": "Увімкнути ці фільтри?"
+    },
+    "options_filters_annoyances_consent_filter_policy": {
+        "message": "Детальніше про те, що блокують фільтри подразників, читайте <a>в Політиці фільтрів AdGuard<\/a>"
+    },
+    "options_filters_annoyances_consent_enable_button": {
+        "message": "Увімкнути"
+    },
     "popup_header_cta_link": {
-        "message": "Хочете блокувати більше?"
+        "message": "Як покращити захист"
+    },
+    "popup_header_update_filters": {
+        "message": "Перевірити оновлення фільтрів"
     },
     "options_popup_import_settings_wrong_file_ext": {
         "message": "Розширення файлу має бути %extension%"
+    },
+    "popup_resume_protection_button": {
+        "message": "Виправити"
     },
     "popup_adguard_for_ios": {
         "message": "AdGuard для iOS"
@@ -42,16 +63,16 @@
         "message": "Вимкнути сповіщення"
     },
     "popup_adguard_footer_title": {
-        "message": "AdGuard для мобільного"
+        "message": "Захистіть свій мобільний пристрій"
     },
     "options_popup_call_to_action": {
-        "message": "Введіть правильну URL-адресу або шлях до файлу фільтра в полі вгорі."
+        "message": "Введіть дійсну URL-адресу або шлях до файлу фільтра."
     },
     "options_popup_description": {
-        "message": "Ви будете підписані на цей фільтр."
+        "message": "Цей фільтр буде додано."
     },
     "options_popup_url_title": {
-        "message": "Додавання нового фільтру"
+        "message": "Додавання нового фільтра"
     },
     "options_popup_url_placeholder": {
         "message": "Введіть URL-адресу або шлях до файлу"
@@ -67,6 +88,30 @@
     },
     "options_popup_check_false_description": {
         "message": "Під час додавання власного фільтра сталась помилка."
+    },
+    "options_add_custom_filter_modal_title": {
+        "message": "Додати власний фільтр"
+    },
+    "options_add_custom_filter_modal_checking_filter": {
+        "message": "Перевірка вашого фільтра..."
+    },
+    "options_add_custom_filter_modal_error_title": {
+        "message": "Не вдалося додати власний фільтр"
+    },
+    "options_add_custom_filter_modal_error_subtitle": {
+        "message": "Спробуйте ще раз або напишіть у службу підтримки"
+    },
+    "options_add_custom_filter_modal_add_button": {
+        "message": "Додати"
+    },
+    "options_add_custom_filter_modal_filter_name": {
+        "message": "Назва фільтру:"
+    },
+    "options_add_custom_filter_modal_filter_trusted": {
+        "message": "Довірений"
+    },
+    "options_add_custom_filter_modal_filter_trusted_description": {
+        "message": "Деякі правила фільтрування можуть суттєво змінити ваш досвід перегляду та поставити під загрозу вашу конфіденційність. Використовуйте лише фільтри розробників, яким довіряєте"
     },
     "options_popup_try_again_button": {
         "message": "Спробувати знову"
@@ -96,7 +141,8 @@
         "message": "AdGuard Антибанер"
     },
     "description": {
-        "message": "Неперевершений захист від реклами та спливних вікон. Блокує рекламу в Facebook, YouTube та на всіх інших вебсайтах."
+        "message": "Неперевершений захист від реклами та спливних вікон. Блокує рекламу на Facebook, YouTube та усіх інших сайтах.",
+        "description": "TEXT MAX LENGTH: 132"
     },
     "background_tab_title": {
         "message": "Фонова вкладка"
@@ -105,31 +151,37 @@
         "message": "Список дозволів"
     },
     "options_allowlist_desc": {
-        "message": "AdGuard не фільтрує вебсайти, які додано до Списку дозволів."
+        "message": "AdGuard не фільтрує вебсайти, які додано до списку дозволів"
     },
     "options_allowlist_invert": {
         "message": "Інвертувати Список дозволів"
     },
     "options_allowlist_invert_desc": {
-        "message": "Розблокувати рекламу всюди, окрім сайтів зі списку дозволів."
+        "message": "Розблокувати рекламу всюди, окрім сайтів зі списку дозволів"
     },
     "options_allowlist_alert_invert": {
-        "message": "Список дозволів інвертовано. Реклама будет блокуватись лише на сайтах з цього списку. <a>Вимкнути<\/a>"
+        "message": "Список дозволів інвертовано. Рекламу буде заблоковано лише на сайтах з цього списку. <a>Вимкнути<\/a>"
+    },
+    "options_allowlist_leave_subtitle": {
+        "message": "Ваші зміни списку дозволів буде втрачено"
     },
     "options_userfilter": {
         "message": "Правила користувача"
     },
     "filtering_log_modified_rules": {
-        "message": "Правила заміни:"
+        "message": "Правила модифікації: %rules_count%"
+    },
+    "filtering_log_stealth_rules": {
+        "message": "Правила Захисту від стеження: %rules_count%"
     },
     "filtering_log_privacy_applied_rules": {
-        "message": "Захист від стеження"
+        "message": "Захист від стеження застосовано"
     },
     "filtering_log_in_allowlist": {
         "message": "Це дозволений сайт"
     },
     "filtering_log_hide_referrer": {
-        "message": "Referrer приховано від сторонніх ресурсів"
+        "message": "Referer приховано від сторонніх ресурсів"
     },
     "filtering_log_hide_search_queries": {
         "message": "Ваші пошукові запити приховано"
@@ -185,11 +237,20 @@
     "options_filters_filter_trusted_tag_desc": {
         "message": "Ви встановили цей фільтр як довірений."
     },
+    "options_filters_info_mv3_total_rules": {
+        "message": "Всього правил: %num%"
+    },
     "options_add_custom_filter": {
         "message": "Додати власний фільтр"
     },
+    "options_filters_custom_disabled_cws": {
+        "message": "Власні фільтри незабаром повернуться. Докладніше в нашому блозі"
+    },
     "options_empty_custom_filter": {
         "message": "Поки що немає власних фільтрів"
+    },
+    "options_loader_applying_changes": {
+        "message": "Застосування змін..."
     },
     "options_editor_indicator_saving": {
         "message": "Збереження..."
@@ -197,11 +258,14 @@
     "options_editor_indicator_saved": {
         "message": "Збережено"
     },
+    "options_popup_import_error_required_privacy_permission": {
+        "message": "Щоб імпортувати цей файл налаштувань, дозвольте AdGuard змінити ваші налаштування конфіденційності."
+    },
     "options_popup_import_success_title": {
-        "message": "Налаштування успішно імпортовані"
+        "message": "Налаштування імпортовано"
     },
     "options_popup_import_error_title": {
-        "message": "Помилка під час імпорту налаштувань"
+        "message": "Не вдалося імпортувати параметри"
     },
     "options_popup_import_error_file_description": {
         "message": "Щось пішло не так."
@@ -212,20 +276,35 @@
     "options_popup_trusted_filter_description": {
         "message": "Довірені фільтри можуть використовувати потужні модифікатори правил фільтрування, що можуть бути небезпечними у невмілих руках. Не вмикайте цю функцію, якщо ви не цілком впевнені."
     },
-    "popup_site_filtering_state": {
-        "message": "Захист на цьому сайті"
-    },
     "popup_site_filtering_state_secure_page": {
         "message": "Безпечна сторінка"
+    },
+    "popup_site_filtering_state_loading": {
+        "message": "Завантаження..."
+    },
+    "popup_site_filtering_state_enabling": {
+        "message": "Увімкнення захисту..."
     },
     "popup_site_filtering_state_enabled": {
         "message": "Захист увімкнено"
     },
+    "popup_site_filtering_state_disabling": {
+        "message": "Вимкнення захисту..."
+    },
     "popup_site_filtering_state_disabled": {
         "message": "Захист вимкнено"
     },
+    "popup_site_filtering_state_pausing": {
+        "message": "Зупинка захисту..."
+    },
     "popup_site_filtering_state_paused": {
         "message": "Захист призупинено"
+    },
+    "popup_site_filtering_state_resuming": {
+        "message": "Відновлення захисту..."
+    },
+    "popup_site_filtering_state_subtitle_all_websites": {
+        "message": "для всіх вебсайтів"
     },
     "popup_site_exception_information": {
         "message": "Фільтрування вимкнено, оскільки воно може перешкоджати роботі цього вебсайту."
@@ -234,10 +313,28 @@
         "message": "Заблоковано: %num%"
     },
     "popup_tab_blocked_all_count": {
-        "message": "Всього: %num%"
+        "message": "Всього заблоковано: %num%"
     },
     "popup_statistics_total": {
         "message": "Усе"
+    },
+    "popup_statistics_all_categories": {
+        "message": "Усі"
+    },
+    "popup_statistics_category_advertising": {
+        "message": "Реклама"
+    },
+    "popup_statistics_category_trackers": {
+        "message": "Стеження"
+    },
+    "popup_statistics_category_social_media": {
+        "message": "Соціальні мережі"
+    },
+    "popup_statistics_category_cdn": {
+        "message": "CDN"
+    },
+    "popup_statistics_category_other": {
+        "message": "Інші"
     },
     "popup_statistics_week_days_mon": {
         "message": "ПН"
@@ -330,46 +427,25 @@
         "message": "ДОКЛАДНІШЕ"
     },
     "popup_block_site_ads_option": {
-        "message": "Блокувати рекламу на цьому сайті"
+        "message": "Блокувати рекламу вручну"
     },
     "popup_security_report": {
         "message": "Перевірити безпечність сайту"
     },
-    "popup_reset_custom_rules": {
-        "message": "Видалити всі правила користувача для цієї сторінки"
-    },
-    "popup_open_settings": {
-        "message": "Налаштування AdGuard"
-    },
-    "popup_block_site_ads_android": {
-        "message": "Блокувати рекламу на сайті"
-    },
-    "popup_security_report_android": {
-        "message": "Звіт про безпеку"
-    },
-    "popup_in_allowlist_android": {
-        "message": "У Списку дозволів"
-    },
-    "popup_site_protection_disabled_android": {
-        "message": "Захист призупинено"
-    },
-    "popup_open_log_android": {
-        "message": "Журнал"
+    "popup_reset_page_user_rules": {
+        "message": "Видалити правила користувача для цього сайту"
     },
     "context_block_site_ads": {
-        "message": "Блокувати рекламу на цьому сайті..."
-    },
-    "context_block_site_element": {
-        "message": "Заблокувати елемент..."
+        "message": "Блокувати рекламу вручну"
     },
     "context_security_report": {
-        "message": "Перевірити безпечність сайту..."
+        "message": "Перевірити безпечність сайту"
     },
     "context_complaint_website": {
-        "message": "Повідомити про проблему..."
+        "message": "Повідомити про проблему"
     },
     "context_site_filtering_disabled": {
-        "message": "AdGuard не може працювати на цьому домені"
+        "message": "AdGuard не може фільтрувати цю сторінку"
     },
     "context_disable_protection": {
         "message": "Призупинити захист AdGuard"
@@ -381,10 +457,10 @@
         "message": "Захист AdGuard призупинено"
     },
     "context_open_settings": {
-        "message": "Налаштування AdGuard..."
+        "message": "Налаштування AdGuard"
     },
     "context_open_log": {
-        "message": "Журнал фільтрування..."
+        "message": "Журнал фільтрування"
     },
     "context_site_exception": {
         "message": "Сайт знаходиться у винятках"
@@ -408,13 +484,16 @@
         "message": "Завантаження бази даних фільтрів..."
     },
     "filters_download_loading": {
-        "message": "Зачекайте доки завантажується база даних фільтрів..."
+        "message": "Будь ласка, зачекайте доки завантажується база даних фільтрів..."
+    },
+    "post_install_loading": {
+        "message": "Розширення завантажується..."
     },
     "filtering_modal_element": {
         "message": "Елемент:"
     },
     "filtering_modal_cookie": {
-        "message": "Куки:"
+        "message": "Кукі-файл:"
     },
     "filtering_modal_important": {
         "message": "Надати правилу вищий пріоритет"
@@ -429,10 +508,10 @@
         "message": "Пошук серед вкладок"
     },
     "filtering_log_preserve_log_off": {
-        "message": "Запис журналу: ВИМКНЕНО"
+        "message": "Не зберігати журнал"
     },
     "filtering_log_preserve_log_on": {
-        "message": "Запис журналу: УВІМКНЕНО"
+        "message": "Зберігати журнал"
     },
     "filtering_refresh_tab_short": {
         "message": "Оновити"
@@ -462,7 +541,7 @@
         "message": "Фільтр"
     },
     "filtering_table_empty_reload_page_desc": {
-        "message": "<reset>Вимкніть фільтри<\/reset> або <refresh>перезавантажте сторінку<\/refresh>, щоб побачити журнал."
+        "message": "Нічого не знайдено. <reset>Вимкніть фільтри<\/reset> або <refresh>перезавантажте сторінку<\/refresh>, щоб переглянути записи журналу."
     },
     "filtering_modal_info_title": {
         "message": "Інформація про блокування"
@@ -497,6 +576,9 @@
     "filtering_modal_unblock": {
         "message": "Розблокувати"
     },
+    "filtering_modal_remove_user": {
+        "message": "Вилучити правило"
+    },
     "filtering_modal_preview_request_button": {
         "message": "Перегляд"
     },
@@ -510,7 +592,7 @@
         "message": "Статус:"
     },
     "filtering_modal_status_text_error": {
-        "message": "Не отримано жодної відповіді"
+        "message": "Не вдалося завантажити попередній перегляд. Будь ласка, спробуйте ще раз"
     },
     "filtering_modal_status_text_loading": {
         "message": "Завантаження..."
@@ -528,7 +610,7 @@
         "message": "Параметри:"
     },
     "filtering_modal_apply_domains": {
-        "message": "Застосувати правило до всіх вебсайтів"
+        "message": "Застосувати правило для всіх сайтів"
     },
     "filtering_modal_third_party": {
         "message": "Застосувати тільки для сторонніх запитів"
@@ -546,10 +628,22 @@
         "message": "Відкрити в новій вкладці"
     },
     "filtering_modal_show_full_url": {
-        "message": "Показати повну URL-адресу"
+        "message": "Показати URL-адресу цілком"
     },
     "filtering_modal_hide_full_url": {
-        "message": "Приховати повну URL-адресу"
+        "message": "Скоротити URL-адресу"
+    },
+    "filtering_modal_show_full_rule": {
+        "message": "Показати правило цілком"
+    },
+    "filtering_modal_hide_full_rule": {
+        "message": "Скоротити правило"
+    },
+    "filtering_modal_show_full_element": {
+        "message": "Показати елемент цілком"
+    },
+    "filtering_modal_hide_full_element": {
+        "message": "Скоротити елемент"
     },
     "filtering_modal_copy_to_clipboard": {
         "message": "Копіювати в буфер обміну"
@@ -597,7 +691,7 @@
         "message": "Блокувати пошукову рекламу та власну рекламу вебсайтів"
     },
     "options_block_acceptable_ads_desc": {
-        "message": "Позбутись <a>власної реклами сайтів та контекстної реклами<\/a>, яка з'являється в результатах пошуку."
+        "message": "Видаляти саморекламу з вебсайтів і контекстну рекламу з результатів пошуку. <a>Докладніше<\/a>"
     },
     "options_show_blocked_ads_count_title": {
         "message": "Показувати кількість заблокованої реклами на піктограмі AdGuard"
@@ -606,7 +700,7 @@
         "message": "Автоматично вмикати найвідповідніші фільтри"
     },
     "options_enable_autodetect_filter_desc": {
-        "message": "Фільтри для певних мов увімкнуться автоматично залежно від мови сайту."
+        "message": "Фільтри для певних мов увімкнуться автоматично залежно від мови сайту"
     },
     "options_select_theme": {
         "message": "Тема"
@@ -626,6 +720,12 @@
     "options_import_settings": {
         "message": "Імпорт налаштувань"
     },
+    "options_report_bug": {
+        "message": "Повідомити про помилку"
+    },
+    "options_leave_feedback": {
+        "message": "Поділитись"
+    },
     "options_privacy": {
         "message": "Захист від стеження"
     },
@@ -642,7 +742,7 @@
         "message": "Інтервал автоматичного оновлення"
     },
     "options_set_update_interval_desc": {
-        "message": "Задля якісного блокування слід регулярно оновлювати фільтри."
+        "message": "Задля якісного блокування слід регулярно оновлювати фільтри"
     },
     "options_userfilter_export": {
         "message": "Експорт"
@@ -650,17 +750,32 @@
     "options_editor_save": {
         "message": "Зберегти"
     },
+    "options_editor_leave_title": {
+        "message": "Вийти без збереження?"
+    },
+    "options_editor_leave_confirm": {
+        "message": "Так, вийти"
+    },
+    "options_editor_leave_cancel": {
+        "message": "Повернутися до редагування"
+    },
     "options_userfilter_import": {
         "message": "Імпорт"
     },
     "options_userfilter_description_key": {
         "message": "Ви можете додавати свої правила фільтрування. Проте ми не рекомендуємо це робити, якщо ви не розбираєтесь у HTML\/CSS. Перш ніж додавати свої правила, ознайомтесь з <a>документацією щодо їх створення<\/a>."
     },
+    "options_userfilter_subtitle_key": {
+        "message": "Використовувати правила для більш точного блокування"
+    },
     "options_userfilter_line_break_off": {
-        "message": "Розрив рядка: ВИМКНЕНО"
+        "message": "Розрив рядка: вимкнено"
     },
     "options_userfilter_line_break_on": {
-        "message": "Розрив рядка: УВІМКНЕНО"
+        "message": "Розрив рядка: увімкнено"
+    },
+    "options_userfilter_leave_subtitle": {
+        "message": "Ваші зміни до правил буде втрачено"
     },
     "options_open_changelog": {
         "message": "Список змін"
@@ -669,7 +784,7 @@
         "message": "Захист від шахрайства і зловмисних програм"
     },
     "options_safebrowsing_enabled_desc": {
-        "message": "Увімкнути Захист від фішингу AdGuard, щоб виявляти потенційно зловмисні чи шахрайські сайти. <a>Докладніше<\/a>"
+        "message": "Увімкнути «Безпеку перегляду» AdGuard, щоб виявляти потенційно зловмисні та шахрайські сайти. <a>Докладніше<\/a>"
     },
     "options_site": {
         "message": "Офіційний сайт"
@@ -685,6 +800,97 @@
     },
     "options_miscellaneous_settings": {
         "message": "Додаткові налаштування"
+    },
+    "options_rule_syntax": {
+        "message": "Синтаксис"
+    },
+    "options_rule_limits": {
+        "message": "Ліміти правил"
+    },
+    "options_rule_limits_description": {
+        "message": "Chrome обмежує кількість правил, які можна застосувати"
+    },
+    "options_rule_limits_dynamic": {
+        "message": "Динамічні правила"
+    },
+    "options_rule_limits_dynamic_user_rules": {
+        "message": "Додані користувачем правила, наприклад <user_rules>правила користувача<\/user_rules>, <allowlist>вебсайти зі списку дозволів<\/allowlist>, <custom_filters>власні фільтри<\/custom_filters> та <quick_fixes>Фільтр швидких виправлень<\/quick_fixes>"
+    },
+    "options_rule_limits_dynamic_unsafe": {
+        "description": "Note: First dollar sign is used to escape the second one, so eventually only one dollar sign will be displayed",
+        "message": "Небезпечні динамічні правила (використовуються для деяких просунутих модифікаторів, таких як $$redirect або $$cookie) — включені в користувацькі правила"
+    },
+    "options_rule_limits_dynamic_regex": {
+        "message": "Правила з регулярними виразами — включені в користувацькі правила"
+    },
+    "options_rule_limits_static_rulesets": {
+        "message": "Статичні набори правил"
+    },
+    "options_rule_limits_static_rulesets_builtin": {
+        "message": "<a>Вбудовані фільтри<\/a>, як-от Блокувати роздратування або Мовні фільтри"
+    },
+    "options_rule_limits_static_rules": {
+        "message": "Статичні правила"
+    },
+    "options_rule_limits_static_rules_all": {
+        "message": "Правила із <a>вбудованих фільтрів<\/a>"
+    },
+    "options_rule_limits_static_rules_regex": {
+        "message": "Правила з регулярними виразами — включені вище"
+    },
+    "options_rule_limits_numbers": {
+        "message": "%current% з %maximum%"
+    },
+    "options_rule_limits_warning_title": {
+        "message": "Браузер змінив список активних фільтрів"
+    },
+    "options_rule_limits_warning_explanation_title": {
+        "message": "Що трапилось?"
+    },
+    "options_rule_limits_warning_explanation_description": {
+        "message": "Після оновлення або додавання нового розширення було перевищено ліміт активних вбудованих правил. Відповідно до Маніфесту V3, браузер Chrome вимкнув усі вбудовані фільтри розширення, окрім усталених."
+    },
+    "options_rule_limits_warning_list_enabled_before_title": {
+        "message": "Фільтри, що були увімкнені перед оновленням"
+    },
+    "options_rule_limits_warning_list_enabled_now_title": {
+        "message": "Фільтри, що увімкнено зараз"
+    },
+    "options_rule_limits_warning_actions_title": {
+        "message": "Ваші можливі дії"
+    },
+    "options_rule_limits_warning_actions_delete_filters": {
+        "message": "Варіант 1. Видаліть з браузера непотрібні розширення для блокування реклами. Щоб спробувати ще раз увімкнути фільтри, зазначені у розділі «Фільтри, що були увімкнені перед оновленням», <a>увімкніть фільтри повторно.<\/a>"
+    },
+    "options_rule_limits_warning_actions_install_app": {
+        "message": "Варіант 2. Встановіть повноцінну програму AdGuard — вона не має обмежень на правила фільтрування. <a>Отримати програму AdGuard<\/a>"
+    },
+    "options_rule_limits_warning_actions_close_warning_one_filter": {
+        "message": "Варіант 3. Якщо вас влаштовує увімкнений зараз усталений фільтр, <a>закрийте це попередження<\/a>"
+    },
+    "options_rule_limits_warning_actions_close_warning_multiple_filters": {
+        "message": "Варіант 3. Якщо вас влаштовують увімкнені зараз усталені фільтри, <a>закрийте це попередження<\/a>"
+    },
+    "options_all_limits_exceeded_warning": {
+        "message": "Ви досягли ліміту активних вбудованих правил. Ваш браузер змінив список активних вбудованих фільтрів. Кількість увімкнутих фільтрів змінилася з %expected% на %current%."
+    },
+    "options_limits_warning_static_filters": {
+        "message": "Ви досягли ліміту активних вбудованих фільтрів. %maximum% з %current% фільтрів увімкнено. Щоб активувати нові правила, вимкніть деякі вбудовані фільтри."
+    },
+    "options_limits_warning_static_rules": {
+        "message": "Ви досягли ліміту активних вбудованих правил. %maximum% з %current% правил увімкнено. Щоб активувати нові правила, вимкніть деякі вбудовані фільтри."
+    },
+    "options_limits_warning_static_regex_rules": {
+        "message": "Ви досягли ліміту активних вбудованих правил з регулярними виразами. %maximum% з %current% правил увімкнено. Щоб активувати нові правила, вимкніть деякі вбудовані фільтри."
+    },
+    "options_limits_warning_dynamic_rules": {
+        "message": "Ви досягли ліміту користувацьких правил. %maximum% з %current% правил активні."
+    },
+    "options_limits_warning_dynamic_unsafe_rules": {
+        "message": "Ви досягли ліміту користувацьких небезпечних правил. %maximum% з %current% небезпечних правил активні."
+    },
+    "options_limits_warning_dynamic_regex_rules": {
+        "message": "Ви досягли ліміту користувацьких правил з регулярними виразами. %maximum% з %current% правил активні."
     },
     "options_show_adguard_full_version_title": {
         "message": "Показувати інформацію про повну версію AdGuard"
@@ -714,7 +920,7 @@
         "message": "Допомагати вдосконалювати фільтри AdGuard"
     },
     "options_collect_hit_stats_desc": {
-        "message": "Надсилати <a>анонімну статистику використання фільтрів<\/a>, яка допоможе покращити та оптимізувати їх"
+        "message": "Надсилати <a>анонімну статистику щодо використання фільтрів<\/a>, щоб допомогти AdGuard покращити свої фільтри"
     },
     "options_show_context_menu_title": {
         "message": "Додати AdGuard в контекстне меню браузера"
@@ -723,76 +929,76 @@
         "message": "Використовувати оптимізовані фільтри"
     },
     "options_use_optimized_filters_desc": {
-        "message": "Список фільтрів, оптимізованих для мобільних пристроїв"
+        "message": "Задля економії трафіку використовує скорочені версії фільтрів, що містять лише найбільш популярні правила. Краще підходить для мобільних браузерів"
     },
     "options_privacy_title": {
         "message": "Захист від стеження"
     },
     "options_privacy_desc": {
-        "message": "Захистіть свої приватні дані від тисяч елементів стеження, блокуючи інтернет-лічильники та системи вебаналітики."
+        "message": "Захистіть свою особисту інформацію від систем стеження завдяки блокуванню їхніх найпоширеніших способів"
     },
     "options_hide_referrer_title": {
         "message": "Приховувати Referrer від сторонніх ресурсів"
     },
     "options_hide_referrer_desc": {
-        "message": "Не дозволяти стороннім ресурсам дізнаватися, який вебсайт ви відвідуєте."
+        "message": "Не дозволяти стороннім ресурсам дізнаватися, який вебсайт ви відвідуєте"
     },
     "options_hide_search_queries_title": {
         "message": "Приховувати пошукові запити"
     },
     "options_hide_search_queries_desc": {
-        "message": "Приховувати від вебсайтів запити в пошуковій системі."
+        "message": "Приховувати від вебсайтів запити в пошуковій системі"
     },
     "options_send_not_track_title": {
         "message": "Надсилати сайтам запити не стежити за вами"
     },
     "options_send_not_track_desc": {
-        "message": "Надсилати запити <gpc>Global Privacy Control<\/gpc> та <dnt>Do Not Track<\/dnt> вебсайтам, які ви відвідуєте."
+        "message": "Надсилати сигнали <gpc>Global Privacy Control<\/gpc> та <dnt>Do Not Track<\/dnt> вебсайтам, які ви відвідуєте"
     },
     "options_stripped_tracking_parameters": {
         "message": "Параметри стеження вилучено"
     },
     "options_modified_first_party_cookie": {
-        "message": "Основні куки змінено"
+        "message": "Первинний кукі-файл змінено"
     },
     "options_modified_third_party_cookie": {
-        "message": "Сторонні куки змінено"
+        "message": "Сторонній кукі-файл змінено"
     },
     "options_remove_client_data_title": {
         "message": "Вилучати заголовок X-Client-Data"
     },
     "options_remove_client_data_desc": {
-        "message": "Забороняти Google Chrome надсилати доменам Google інформацію про версію та модифікації."
+        "message": "Забороняти Google Chrome надсилати Google-доменам інформацію про версію та модифікації браузера"
     },
     "options_disable_webrtc_title": {
         "message": "Вимкнути WebRTC"
     },
     "options_disable_webrtc_desc": {
-        "message": "Вашу справжню IP-адресу може бути виявлено в разі використання WebRTC, навіть якщо ви користуєтесь проксі або VPN. Вимикання WebRTC може порушити роботу деяких сайтів."
+        "message": "Вашу справжню IP-адресу може бути виявлено в разі використання WebRTC, навіть якщо ви користуєтесь проксі або VPN. Вимикання WebRTC може порушити роботу деяких сайтів"
     },
     "options_strip_tracking_params_title": {
         "message": "Вилучати параметри стеження"
     },
     "options_strip_tracking_params_description": {
-        "message": "Якщо увімкнути, Фільтр URL-стеження AdGuard буде увімкнено, щоб видаляти параметри стеження з URL-адрес."
+        "message": "Видаляти параметри стеження з URL-адрес за допомогою Фільтра URL-стеження AdGuard"
     },
     "options_block_known_trackers_title": {
-        "message": "Блокувати відомі елементи стеження"
+        "message": "Блокувати елементи стеження"
     },
     "options_block_known_trackers_description": {
-        "message": "Якщо увімкнути, Фільтр захисту від стеження AdGuard буде увімкнено, щоб блокувати відомі елементи стеження."
+        "message": "Блокувати стеження та системи вебаналітики за допомогою Фільтра захисту від стеження AdGuard"
     },
     "options_third_party_title": {
-        "message": "Самознищення сторонніх куків"
+        "message": "Самознищення сторонніх кукі-файлів"
     },
     "options_third_party_desc": {
-        "message": "Обмежити час збереження сторонніх кукі-файлів (хвилини)."
+        "message": "Час самознищення сторонніх куків (хвилини)"
     },
     "options_first_party_title": {
-        "message": "Самознищення основних куків (не рекомендовано)"
+        "message": "Самознищення первинних кукі-файлів (не рекомендовано)"
     },
     "options_first_party_desc": {
-        "message": "Обмежити час збереження основних кукі-файлів (хвилини)."
+        "message": "Час самознищення основних куків (хвилини)"
     },
     "popup_abuse_site": {
         "message": "Повідомити про проблему"
@@ -807,28 +1013,34 @@
         "message": "Статистика"
     },
     "popup_statistics_time_day": {
-        "message": "День"
+        "message": "Минула доба"
     },
     "popup_statistics_time_week": {
-        "message": "Тиждень"
+        "message": "Минулий тиждень"
     },
     "popup_statistics_time_month": {
-        "message": "Місяць"
+        "message": "Минулий місяць"
     },
     "popup_statistics_time_year": {
-        "message": "Рік"
+        "message": "Минулий рік"
     },
     "popup_switch_button": {
         "message": "Перемикач захисту"
     },
+    "popup_limits_exceeded_warning": {
+        "message": "Ваш браузер змінив список активних вбудованих фільтрів"
+    },
+    "snack_on_websites_limits_exceeded_warning": {
+        "message": "Перевищено ліміт правил у браузерному розширенні AdGuard. Будь ласка, перевірте свої фільтри та вимкніть непотрібні"
+    },
     "short_name": {
-        "message": "AdGuard Антибанер"
+        "message": "AdGuard"
     },
     "options_about": {
         "message": "Про розширення"
     },
     "options_privacy_policy": {
-        "message": "Політика приватності"
+        "message": "Політика конфіденційності"
     },
     "options_acknowledgment": {
         "message": "Подяки"
@@ -849,13 +1061,10 @@
         "message": "Вилучити"
     },
     "options_nav_better_than_extension": {
-        "message": "Чому повноцінна програма AdGuard краща, ніж розширення?"
+        "message": "Чому програма AdGuard краща, ніж розширення?"
     },
     "options_nav_compare": {
-        "message": "Чим вони відрізняються"
-    },
-    "options_nav_hide": {
-        "message": "Приховати"
+        "message": "Порівняти"
     },
     "options_filters_search": {
         "message": "Пошук"
@@ -864,34 +1073,37 @@
         "message": "Браузерне розширення AdGuard"
     },
     "group_description_adblocking": {
-        "message": "Налаштуйте блокування, щоб раз і назавжди позбутись надокучливих банерів, спливних вікон, відео-реклами тощо."
+        "message": "Налаштуйте блокування, щоб раз і назавжди позбутись надокучливих банерів, спливних вікон, відеореклами тощо"
     },
     "group_description_stealth": {
-        "message": "Захистіть свою особисту інформацію від систем стеження завдяки блокуванню їхніх найпоширеніших способів."
+        "message": "Захистіть свою особисту інформацію від систем стеження завдяки блокуванню їхніх найпоширеніших способів"
     },
     "group_description_social": {
-        "message": "Сховати небажані кнопки «Подобається», «Поділитися» та інші віджети соціальних мереж."
+        "message": "Сховати небажані кнопки «Подобається», «Поділитися» та інші віджети соціальних мереж"
     },
     "group_description_annoyances": {
-        "message": "Видаліть спливні вікна та інші надокучливі сповіщення, наприклад, повідомлення про куки."
+        "message": "Видаліть спливні вікна та інші надокучливі сповіщення, наприклад, повідомлення про куки"
     },
     "group_description_security": {
-        "message": "Захистіться від зловмисного програмного забезпечення, фішингу та інших загроз в інтернеті."
+        "message": "Захистіться від зловмисного програмного забезпечення, фішингу та інших загроз в інтернеті"
     },
     "group_description_miscellaneous": {
-        "message": "Додаткові фільтрі, щоб налаштувати блокування за допомогою AdGuard."
+        "message": "Додаткові фільтрі для налаштування блокування за допомогою AdGuard"
     },
     "group_description_custom": {
         "message": "Створюйте власні фільтри, щоб налаштувати фільтрування, як заманеться."
     },
     "group_description_lang": {
-        "message": "Без обмежень блокуйте рекламу на сайтах різними мовами."
+        "message": "Без обмежень блокуйте рекламу на сайтах різними мовами"
     },
     "fullscreen_user_rules_title": {
         "message": "Правила користувача"
     },
     "options_user_rules_editor_stub_title": {
-        "message": "Редактор уже відкрито"
+        "message": "Редактор відкрито в іншому вікні"
+    },
+    "options_user_rules_editor_stub_subtitle": {
+        "message": "Ваші правила з’являться тут після того, як ви його закриєте"
     },
     "options_user_rules_editor_stub_go_to_editor_button": {
         "message": "Перейти до редактора"
@@ -927,25 +1139,25 @@
         "message": "Спробувати знову"
     },
     "filtering_log_tag_tooltip_first_party": {
-        "message": "Лише основні запити"
+        "message": "Тутешні запити"
     },
     "filtering_log_tag_tooltip_third_party": {
-        "message": "Лише сторонні запити"
+        "message": "Сторонні запити"
     },
     "filtering_log_tag_tooltip_regular": {
-        "message": "Лише запити, опрацьовані без фільтрування"
+        "message": "Запити без фільтрування"
     },
     "filtering_log_tag_tooltip_allowed": {
-        "message": "Лише дозволені та розблоковані запити"
+        "message": "Дозволені та розблоковані запити"
     },
     "filtering_log_tag_tooltip_blocked": {
-        "message": "Лише заблоковані запити"
+        "message": "Заблоковані запити"
     },
     "filtering_log_tag_tooltip_modified": {
-        "message": "Лише модифіковані запити"
+        "message": "Модифіковані запити"
     },
     "filtering_log_tag_tooltip_user_rules": {
-        "message": "Лише запити, змінені правилами користувача"
+        "message": "Запити, змінені правилами користувача"
     },
     "filtering_log_tag_tooltip_html": {
         "message": "Документи та піддокументи"
@@ -966,7 +1178,7 @@
         "message": "Медіа"
     },
     "filtering_log_tag_tooltip_other": {
-        "message": "Шрифти, пінги, WebRTC, WebSocket тощо"
+        "message": "Шрифти, ping-запити, WebRTC, WebSocket..."
     },
     "filtering_log_badge_tooltip_third_party": {
         "message": "Сторонній запит"
@@ -977,14 +1189,20 @@
     "filtering_log_badge_tooltip_http_status_code": {
         "message": "Код статусу HTTP"
     },
+    "filtering_log_assumed_rule_description": {
+        "message": "Це потенційне правило. Детальніше в нашій <a>Базі знань<\/a>"
+    },
     "options_stealth_general_title": {
         "message": "Загальні"
     },
     "options_stealth_cookies_title": {
-        "message": "Куки"
+        "message": "Кукі-файли"
     },
     "options_stealth_miscellaneous_title": {
         "message": "Різне"
+    },
+    "options_coming_soon": {
+        "message": "Незабаром"
     },
     "blocking_pages_malware": {
         "message": "Вебсторінка <strong>%host%<\/strong> відома, як зловмисна. Її заблоковано згідно з вашими налаштуваннями безпеки."
@@ -1015,5 +1233,29 @@
     },
     "blocking_pages_btn_proceed": {
         "message": "В усякому разі продовжити"
+    },
+    "text_collapser_show_default": {
+        "message": "Показати текст цілком"
+    },
+    "text_collapser_hide_default": {
+        "message": "Скоротити текст"
+    },
+    "close_button_title": {
+        "message": "Закрити"
+    },
+    "filtering_modal_applied_rules": {
+        "message": "| Застосоване правило: | Застосовані правила: | Застосовані: правила:",
+        "description": "WARNING: correct number of plural forms is required"
+    },
+    "filtering_modal_assumed_rules": {
+        "message": "| Потенційне правило: | Потенційні правила: | Потенційні правила:",
+        "description": "WARNING: correct number of plural forms is required"
+    },
+    "filtering_modal_original_rules": {
+        "message": "| Первинне правило: | Первинні правила: | Первинні правила:",
+        "description": "WARNING: correct number of plural forms is required"
+    },
+    "filtering_modal_declarative_rule": {
+        "message": "Правило DNR:"
     }
 }
